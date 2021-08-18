@@ -1,12 +1,45 @@
-<html>
+<!doctype html>
+<html lang='en'>
 
-<head></head>
+<head>
+    <meta charset='utf-8'>
+    <title>Banner pdf generator - build your own banner within a seconds!</title>
+
+    <!-- production version, optimized for size and speed -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <!-- development version, includes helpful console warnings -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+
+    <!-- pdfmake -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.0/pdfmake.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.0/vfs_fonts.min.js'></script>
+</head>
+
+
 
 <body>
-    <div style="max-width: 1000px; width:100%; margin:0 auto;">
-        <img src="title-banner.jpeg" width="100%">
-        <h1>Coming soon...</h1>
+
+    <div id="app">
+        <h1>Birthday banner generator</h1>
+        <h2>Generate your own, for free!</h2>
+        <div>
+            <h2>Steps:</h2>
+            <h3>1. Insert text you want to have on your banner</h3>
+            <input type="text" v-model="bannerValue" />
+
+
+            <h3>2. Generate pdf (each letter on a separate A4 page) and print it</h3>
+            <button v-on:click="generate">Generate</button>
+
+            <h3>3. Cut the letters, connect with a string</h3>
+
+            <h3>4. Enjoy!</h3>
+        </div>
     </div>
+
+    <script src="./js/logic.js"></script>
+
 </body>
 
 </html>
