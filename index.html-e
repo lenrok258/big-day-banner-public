@@ -53,9 +53,9 @@
         gtag('config', 'G-1X5ZG74B0L');
     </script>
 
-    <script src="./js/684fbaa6-db4e-4ffc-8fc1-cbdb79db649b.js?version=202108191024"></script>
+    <script src="./js/684fbaa6-db4e-4ffc-8fc1-cbdb79db649b.js?version=__version__"></script>
 
-    <div style="font-size:xx-small;color: gray;">version: 202108191024</div>
+    <div style="font-size:xx-small;color: gray;">version: __version__</div>
 
 </body>
 
