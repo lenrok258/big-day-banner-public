@@ -14,6 +14,16 @@
     <!-- pdfmake -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.0/pdfmake.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.0/vfs_fonts.min.js'></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1X5ZG74B0L"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-1X5ZG74B0L');
+    </script>
 </head>
 
 
@@ -42,16 +52,6 @@
             suggestions, requests? let us know: <a href="mailto:hello@bigdaybanner.com">hello@bigdaybanner.com</a>
         </div>
     </div>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1X5ZG74B0L"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-1X5ZG74B0L');
-    </script>
 
     <script src="./js/684fbaa6-db4e-4ffc-8fc1-cbdb79db649b.js?version=__version__"></script>
 
