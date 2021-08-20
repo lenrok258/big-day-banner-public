@@ -48,12 +48,12 @@
                                 aria-label="Happy Birthday!" aria-describedby="Happy Birthday!" v-model="bannerValue"
                                 style="margin-bottom: 0pxs;" maxlength="100">
 
-                            <h2>2. Generate printout pdf</h2>
+                            <h2>2. Generate pdf printout</h2>
                             <button class="btn btn-primary" type="button" id="button-addon2" v-on:click="generate">
                                 Generate banner PDF
                             </button>
 
-                            <h2>3. Cut the letters, connect with a string</h2>
+                            <h2>3. Cut out the letters, connect with a string</h2>
 
                             <h2>4. Enjoy!</h2>
                         </form>
