@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col">
                 <div style="max-width: 1000px; width:100%; margin:0 auto;">
-                    <img src="./img/title-banner.jpeg?version=__version__" width="100%" style="padding-top: 20px;">
+                    <img src="./img/title-banner.png?version=__version__" width="100%" style="padding-top: 20px;">
 
                     <div id="app">
                         <ol>
