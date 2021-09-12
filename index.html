@@ -32,7 +32,8 @@
         <div class="row">
             <div class="col">
                 <div style="max-width: 1000px; width:100%; margin:0 auto;">
-                    <img src="./img/title-banner-100.jpg?version=202109122122" width="100%" style="padding-top: 20px;" alt="big day banner welcome picture">
+                    <img src="./img/title-banner-100.jpg?version=202109122207" width="100%" style="padding-top: 20px;"
+                        alt="big day banner welcome picture">
 
                     <div id="app">
                         <ol>
@@ -40,9 +41,13 @@
                                 <li>Insert banner text</li>
                             </h2>
 
-                            <input id="input_generateText" type="text" class="form-control" placeholder=""
-                                aria-label="" aria-describedby="" v-model="bannerValue"
-                                style="margin-bottom: 0pxs; max-width: 500px;" maxlength="100">
+                            <input id="input_generateText" type="text" class="form-control" placeholder="" aria-label=""
+                                aria-describedby="" v-model="bannerValue" style="margin-bottom: 0pxs; max-width: 500px;"
+                                maxlength="100" required>
+                            <div class="input_generateText_error" v-if="input_generateText_error"
+                                style="color: indianred;" v-cloak>
+                                {{input_generateText_error}}
+                            </div>
 
                             <h2>
                                 <li>Generate pdf printout</li>
@@ -63,7 +68,7 @@
                     <div style="padding-top: 50px; text-align: right;">
                         <i class="bi bi-mailbox"></i>&nbsp;&nbsp;Suggestions, requests? Let us know:
                         <a href="mailto:hello@bigdaybanner.com">hello@bigdaybanner.com</a>
-                        <div style="font-size:xx-small;color: gray;">version: 202109122122</div>
+                        <div style="font-size:xx-small;color: gray;">version: 202109122207</div>
 
                     </div>
                 </div>
@@ -77,7 +82,7 @@
     <!-- analytics -->
     <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js"
         id="ZwSg9rf6GA" async defer></script>
-    <script src="./js/684fbaa6-db4e-4ffc-8fc1-cbdb79db649b.js?version=202109122122"></script>
+    <script src="./js/684fbaa6-db4e-4ffc-8fc1-cbdb79db649b.js?version=202109122207"></script>
 </body>
 
 </html>
