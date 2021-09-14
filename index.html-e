@@ -4,9 +4,14 @@
 <head>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Generate your own free pdf banner for birthday, graduation day, welcome party.">
+    <meta name="description" content="Generate your own free, pdf banner printout for a birthday, graduation day or welcome party.">
+    <meta name="google" content="notranslate">
 
-    <title>Banner pdf generator - build your own banner within seconds!</title>
+    <meta name="og:title" content="Banner Generator - build your own banner pdf within seconds!" />
+    <meta name="og:description" content="Generate your own free, pdf banner printout for a birthday, graduation day or welcome party." />
+    <meta name="og:image" content="https://bigdaybanner.com/img/og-meta-image.jpg" />
+
+    <title>Banner Generator - build your own banner pdf within seconds!</title>
 
     <!-- production version, optimized for size and speed -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -32,7 +37,8 @@
         <div class="row">
             <div class="col">
                 <div style="max-width: 1000px; width:100%; margin:0 auto;">
-                    <img src="./img/title-banner-100.jpg?version=__version__" width="100%" style="padding-top: 20px;" alt="big day banner welcome picture">
+                    <img src="./img/title-banner-100.jpg?version=__version__" width="100%" style="padding-top: 20px;"
+                        alt="big day banner welcome picture">
 
                     <div id="app">
                         <ol>
@@ -40,9 +46,13 @@
                                 <li>Insert banner text</li>
                             </h2>
 
-                            <input type="text" class="form-control" placeholder="Happy Birthday!"
-                                aria-label="Happy Birthday!" aria-describedby="Happy Birthday!" v-model="bannerValue"
-                                style="margin-bottom: 0pxs; max-width: 500px;" maxlength="100">
+                            <input id="input_generateText" type="text" class="form-control" placeholder="" aria-label=""
+                                aria-describedby="" v-model="bannerValue" style="margin-bottom: 0pxs; max-width: 500px;"
+                                maxlength="100" required>
+                            <div class="input_generateText_error" v-if="input_generateText_error"
+                                style="color: indianred;" v-cloak>
+                                {{input_generateText_error}}
+                            </div>
 
                             <h2>
                                 <li>Generate pdf printout</li>
@@ -60,11 +70,10 @@
                             </h2>
                         </ol>
                     </div>
-                    <div style="padding-top: 50px; text-align: right;">
+                    <div style="padding-top: 20px; text-align: right;">
                         <i class="bi bi-mailbox"></i>&nbsp;&nbsp;Suggestions, requests? Let us know:
                         <a href="mailto:hello@bigdaybanner.com">hello@bigdaybanner.com</a>
                         <div style="font-size:xx-small;color: gray;">version: __version__</div>
-
                     </div>
                 </div>
             </div>
