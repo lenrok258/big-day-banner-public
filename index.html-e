@@ -9,9 +9,9 @@
 
     <meta property="og:title" content="Banner Generator - build your own banner pdf within seconds!">
     <meta property="og:description" content="Generate your own free, pdf banner printout for a birthday, graduation day or welcome party.">
-    <meta property="og:image" content="https://bigdaybanner.com/img/og-meta-image.jpg">
-    <meta property="og:image:width" content="1080">
-    <meta property="og:image:height" content="1080">
+    <meta property="og:image" content="https://bigdaybanner.com/img/og-meta-image.jpg?version=__version__">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="627">
 
     <title>Banner Generator - build your own banner pdf within seconds!</title>
 
