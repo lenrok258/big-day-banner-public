@@ -6,3 +6,7 @@ div.h2-section button.nav-link {
     padding-top: 2px;
     padding-bottom: 2px;
 }
+
+[v-cloak] {
+    display: none;
+}
