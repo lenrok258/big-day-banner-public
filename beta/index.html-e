@@ -69,33 +69,99 @@
                                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                                            data-bs-target="#pills-home" type="button" role="tab"
-                                            aria-controls="pills-home" aria-selected="true">Shape</button>
+                                            data-bs-target="#pills-home" type="button" role="tab">Shape</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                            data-bs-target="#pills-profile" type="button" role="tab"
-                                            aria-controls="pills-profile" aria-selected="false">Color palette</button>
+                                            data-bs-target="#pills-profile" type="button" role="tab">Color
+                                            palette</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                            data-bs-target="#pills-contact" type="button" role="tab"
-                                            aria-controls="pills-contact" aria-selected="false">Pattern</button>
+                                            data-bs-target="#pills-contact" type="button" role="tab">Pattern</button>
                                     </li>
                                 </ul>
+
                                 <div class="tab-content" id="pills-tabContent">
-                                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                                        aria-labelledby="pills-home-tab">
-                                        Shapes will land here
-                                        <br/><br/><br/>
+
+                                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel">
+
+                                        <!-- Shapes panel -->
+
+                                        <div class="row row-cols-2 row-cols-md-4 g-4">
+                                            <div class="col">
+                                                <div class="card h-100">
+                                                    <img src="..." class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Card title</h5>
+                                                        <p class="card-text">This is a wider card with supporting text
+                                                            below as a natural lead-in to additional content. This
+                                                            content is a little bit longer.</p>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card h-100">
+                                                    <img src="..." class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Card title</h5>
+                                                        <p class="card-text">This card has supporting text below as a
+                                                            natural lead-in to additional content.</p>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card h-100">
+                                                    <img src="..." class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Card title</h5>
+                                                        <p class="card-text">This is a wider card with supporting text
+                                                            below as a natural lead-in to additional content. This card
+                                                            has even longer content than the first to show that equal
+                                                            height action.</p>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card h-100">
+                                                    <img src="..." class="card-img-top" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Card title</h5>
+                                                        <p class="card-text">This is a wider card with supporting text
+                                                            below as a natural lead-in to additional content. This card
+                                                            has even longer content than the first to show that equal
+                                                            height action.</p>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                                        aria-labelledby="pills-profile-tab">
+
+                                    <div class="tab-pane fade" id="pills-profile" role="tabpanel">
+
+                                        <!-- Color patteles panel -->
                                         Say a warm walcome to color palletes
+
                                     </div>
-                                    <div class="tab-pane fade" id="pills-contact" role="tabpanel"
-                                        aria-labelledby="pills-contact-tab">
+
+                                    <div class="tab-pane fade" id="pills-contact" role="tabpanel">
+
+                                        <!-- Patterns panel -->
                                         Patters go here
+
                                     </div>
                                 </div>
 
@@ -105,7 +171,7 @@
                                     <li>Generate printout</li>
                                 </h2>
                                 <button class="btn btn-primary" type="button" id="button-addon2" v-on:click="generate">
-                                    Generate PDF
+                                    <i class="bi bi-file-earmark-pdf"></i> Generate PDF
                                 </button>
                             </div>
                             <div class="h2-section">
