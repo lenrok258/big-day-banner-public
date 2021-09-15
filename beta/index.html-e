@@ -44,7 +44,7 @@
                     <img src="./img/title-banner-100.jpg?version=__version__" width="100%" style="padding-top: 20px; padding-bottom: 30px;"
                         alt="big day banner welcome picture">
 
-                    <div id="app">
+                    <div id="app" style="max-width: 800px;">
                         <ol>
                             <div class="h2-section">
                                 <h2>
