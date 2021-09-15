@@ -4,11 +4,13 @@
 <head>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Powerful, yet simple tool for creating beautiful banner printouts (pdf format). Just enter a banner text, click 'generate' button and download free pdf printout. Use it for your friend's birthday, graduation day or welcome party.">
+    <meta name="description"
+        content="Powerful, yet simple tool for creating beautiful banner printouts (pdf format). Just enter a banner text, click 'generate' button and download free pdf printout. Use it for your friend's birthday, graduation day or welcome party.">
     <meta name="google" content="notranslate">
 
     <meta property="og:title" content="BigDayBanner.com: your own free banner pdf within seconds!">
-    <meta property="og:description" content="Powerful, yet simple tool for creating beautiful banner printouts (pdf format). Just enter a banner text, click 'generate' button and download free pdf printout. Use it for your friend's birthday, graduation day or welcome party.">
+    <meta property="og:description"
+        content="Powerful, yet simple tool for creating beautiful banner printouts (pdf format). Just enter a banner text, click 'generate' button and download free pdf printout. Use it for your friend's birthday, graduation day or welcome party.">
     <meta property="og:image" content="https://bigdaybanner.com/img/og-meta-image.jpg?version=__version__">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="627">
@@ -44,32 +46,76 @@
 
                     <div id="app">
                         <ol>
-                            <h2>
-                                <li>Insert banner text</li>
-                            </h2>
+                            <div class="h2-section">
+                                <h2>
+                                    <li>Insert banner text</li>
+                                </h2>
 
-                            <input id="input_generateText" type="text" class="form-control" placeholder="" aria-label=""
-                                aria-describedby="" v-model="bannerValue" style="margin-bottom: 0pxs; max-width: 500px;"
-                                maxlength="100" required>
-                            <div class="input_generateText_error" v-if="input_generateText_error"
-                                style="color: indianred;" v-cloak>
-                                {{input_generateText_error}}
+                                <input id="input_generateText" type="text" class="form-control" placeholder=""
+                                    aria-label="" aria-describedby="" v-model="bannerValue"
+                                    style="margin-bottom: 0pxs; max-width: 500px;" maxlength="100" required>
+                                <div class="input_generateText_error" v-if="input_generateText_error"
+                                    style="color: indianred;" v-cloak>
+                                    {{input_generateText_error}}
+                                </div>
                             </div>
+                            <div class="h2-section">
+                                <h2>
+                                    <li>Customize your design</li>
+                                </h2>
 
-                            <h2>
-                                <li>Generate pdf printout</li>
-                            </h2>
-                            <button class="btn btn-primary" type="button" id="button-addon2" v-on:click="generate">
-                                Generate banner PDF
-                            </button>
+                                <!-- Navigation panel -->
 
-                            <h2>
-                                <li>Cut out the letters, connect with a string</li>
-                            </h2>
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                            data-bs-target="#pills-home" type="button" role="tab"
+                                            aria-controls="pills-home" aria-selected="true">Shape</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                            data-bs-target="#pills-profile" type="button" role="tab"
+                                            aria-controls="pills-profile" aria-selected="false">Color palette</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                            data-bs-target="#pills-contact" type="button" role="tab"
+                                            aria-controls="pills-contact" aria-selected="false">Pattern</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                        aria-labelledby="pills-home-tab">
+                                        Shapes will land here
+                                        <br/><br/><br/>
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                        aria-labelledby="pills-profile-tab">
+                                        Say a warm walcome to color palletes
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                        aria-labelledby="pills-contact-tab">
+                                        Patters go here
+                                    </div>
+                                </div>
 
-                            <h2>
-                                <li>Enjoy!</li>
-                            </h2>
+                            </div>
+                            <div class="h2-section">
+                                <h2>
+                                    <li>Generate printout</li>
+                                </h2>
+                                <button class="btn btn-primary" type="button" id="button-addon2" v-on:click="generate">
+                                    Generate PDF
+                                </button>
+                            </div>
+                            <div class="h2-section">
+                                <h2>
+                                    <li>
+                                        Cut out the letters, connect with a string, enjoy! <i
+                                            class="bi bi-emoji-smile"></i>
+                                    </li>
+                                </h2>
+                            </div>
                         </ol>
                     </div>
                     <div style="padding-top: 20px; text-align: right;">
