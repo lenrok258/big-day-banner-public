@@ -88,6 +88,7 @@
                                     <div class="tab-pane fade" id="pills-profile" role="tabpanel">
 
                                         <!-- Color patteles panel -->
+
                                         <div class="row card-radio-group">
                                             <div v-for="(palette, i) in viewData.colorPalettes" v-cloak :class="{ 'selected': i == selectedColorPalette }" v-on:click="setSelectedColorPalette(i)" class="card card-radio">
                                                 <div class="card-body">
@@ -103,7 +104,12 @@
                                     <div class="tab-pane fade" id="pills-contact" role="tabpanel">
 
                                         <!-- Patterns panel -->
-                                        Patters go here
+
+                                        <div class="row card-radio-group">
+                                            <div v-for="(pattern, index) in viewData.patterns" v-cloak :class="{ 'selected': pattern.name == selectedPattern }" v-on:click="setSelectedPattern(pattern.name)" class="card card-radio">
+                                                <div class="card-body" v-html="pattern.svg"></div>
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
