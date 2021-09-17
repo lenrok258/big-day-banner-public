@@ -88,7 +88,15 @@
                                     <div class="tab-pane fade" id="pills-profile" role="tabpanel">
 
                                         <!-- Color patteles panel -->
-                                        Say a warm walcome to color palletes
+                                        <div class="row card-radio-group">
+                                            <div v-for="(palette, i) in viewData.colorPalettes" v-cloak :class="{ 'selected': i == selectedColorPalette }" v-on:click="setSelectedColorPalette(i)" class="card card-radio">
+                                                <div class="card-body">
+                                                    <ul class="list-group">
+                                                        <li v-for="color in palette.colors" class="list-group-item" :style="{backgroundColor: '#'+color}" style="height: 10px;">&nbsp</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     </div>
 
