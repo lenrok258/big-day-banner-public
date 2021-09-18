@@ -1,1 +1,268 @@
-const a0_0xb0d4e9=a0_0x30e7;(function(_0x31dfe1,_0x40e75e){const _0x49bb2a=a0_0x30e7,_0x4b357d=_0x31dfe1();while(!![]){try{const _0x4bfe60=parseInt(_0x49bb2a(0x223))/0x1+parseInt(_0x49bb2a(0x23e))/0x2+parseInt(_0x49bb2a(0x1f1))/0x3+parseInt(_0x49bb2a(0x215))/0x4+-parseInt(_0x49bb2a(0x210))/0x5+-parseInt(_0x49bb2a(0x22f))/0x6+-parseInt(_0x49bb2a(0x220))/0x7;if(_0x4bfe60===_0x40e75e)break;else _0x4b357d['push'](_0x4b357d['shift']());}catch(_0x26efa5){_0x4b357d['push'](_0x4b357d['shift']());}}}(a0_0x331f,0xbf73a));const pageTemplate=a0_0xb0d4e9(0x235),fonts={'Hack':{'nornal':a0_0xb0d4e9(0x217),'bold':'https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/fonts/hack-bold.woff','italics':a0_0xb0d4e9(0x217),'bolditalics':a0_0xb0d4e9(0x217)}},shapes={'tooth':{'d':a0_0xb0d4e9(0x224),'charX':a0_0xb0d4e9(0x1fc),'charY':'50%','fontSize':a0_0xb0d4e9(0x238)},'triangle':{'d':'M3,3\x20L492,3\x20L246,640\x20Z','charX':'50%','charY':a0_0xb0d4e9(0x23a),'fontSize':'300'},'tallTriangle':{'d':a0_0xb0d4e9(0x202),'charX':a0_0xb0d4e9(0x1fc),'charY':a0_0xb0d4e9(0x1fc),'fontSize':a0_0xb0d4e9(0x238)},'bottomHalfCircle':{'d':a0_0xb0d4e9(0x225),'charX':a0_0xb0d4e9(0x1fc),'charY':a0_0xb0d4e9(0x1fc),'fontSize':a0_0xb0d4e9(0x238)},'rectangle':{'d':a0_0xb0d4e9(0x234),'charX':a0_0xb0d4e9(0x1fc),'charY':a0_0xb0d4e9(0x1fc),'fontSize':a0_0xb0d4e9(0x238)}},colorPalettes={0x0:{'colors':[a0_0xb0d4e9(0x21c),a0_0xb0d4e9(0x222),a0_0xb0d4e9(0x239),a0_0xb0d4e9(0x216),a0_0xb0d4e9(0x1ee),a0_0xb0d4e9(0x205),a0_0xb0d4e9(0x1f3)]},0x1:{'colors':[a0_0xb0d4e9(0x1f7),a0_0xb0d4e9(0x232),a0_0xb0d4e9(0x21e),a0_0xb0d4e9(0x23c),a0_0xb0d4e9(0x1f6),a0_0xb0d4e9(0x218),a0_0xb0d4e9(0x1ea),a0_0xb0d4e9(0x1e4),'ae2012',a0_0xb0d4e9(0x20a)]},0x2:{'colors':[a0_0xb0d4e9(0x21a),'ffd166',a0_0xb0d4e9(0x23d),a0_0xb0d4e9(0x23f),a0_0xb0d4e9(0x1e9)]},0x3:{'colors':[a0_0xb0d4e9(0x1ec),'ff8700',a0_0xb0d4e9(0x21d),'deff0a',a0_0xb0d4e9(0x242),a0_0xb0d4e9(0x1e7),a0_0xb0d4e9(0x1e5),a0_0xb0d4e9(0x20c),a0_0xb0d4e9(0x21b),a0_0xb0d4e9(0x207)]},0x4:{'colors':[a0_0xb0d4e9(0x221),a0_0xb0d4e9(0x244),'e9e3e6','b2b2b2','736f72']}},_config_texture_stripes_size=0x50,_config_texture_stripes_stripeWidth=0x32,textures={'none':{'def':''},'stars':{'def':a0_0xb0d4e9(0x1ed)},'stripes':{'def':'<pattern\x20id=\x22texture\x22\x20patternUnits=\x22userSpaceOnUse\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width=\x22'+_config_texture_stripes_size+a0_0xb0d4e9(0x1e6)+_config_texture_stripes_size+a0_0xb0d4e9(0x1f5)+_config_texture_stripes_size/0x2+','+_config_texture_stripes_size/0x2+'\x20L'+_config_texture_stripes_size/0x2+',-'+_config_texture_stripes_size/0x2+a0_0xb0d4e9(0x1f2)+_config_texture_stripes_size+'\x20L'+_config_texture_stripes_size+a0_0xb0d4e9(0x1f9)+(_config_texture_stripes_size-_config_texture_stripes_stripeWidth/0x2)+','+(_config_texture_stripes_size+_config_texture_stripes_stripeWidth/0x2)+'\x20L'+(_config_texture_stripes_size+_config_texture_stripes_stripeWidth/0x2)+','+(_config_texture_stripes_size-_config_texture_stripes_stripeWidth/0x2)+a0_0xb0d4e9(0x214)+_config_texture_stripes_stripeWidth+a0_0xb0d4e9(0x1fd)}},drawColor=_0x119bea=>{const _0x41a199=a0_0xb0d4e9,_0x5ef195=colorPalettes[_0x119bea];typeof _0x5ef195[_0x41a199(0x231)]==='undefined'&&(_0x5ef195[_0x41a199(0x231)]=[]);_0x5ef195[_0x41a199(0x231)][_0x41a199(0x213)]==0x0&&(_0x5ef195[_0x41a199(0x231)]=_0x5ef195[_0x41a199(0x226)][_0x41a199(0x219)]());const _0x68880e=_0x5ef195[_0x41a199(0x231)],_0x541906=_0x5ef195[_0x41a199(0x1e8)];let _0x14b7ae=Math['floor'](Math[_0x41a199(0x1f4)]()*_0x68880e[_0x41a199(0x213)]),_0x23a855=_0x68880e[_0x14b7ae];return _0x23a855===_0x541906&&(_0x14b7ae=_0x14b7ae+0x1<_0x68880e[_0x41a199(0x213)]?_0x14b7ae+0x1:0x0,_0x23a855=_0x68880e[_0x14b7ae]),_0x68880e[_0x41a199(0x229)](_0x14b7ae,0x1),_0x5ef195['prvColor']=_0x23a855,_0x23a855;},createPage=(_0x160476,_0x5f0881,_0x57fedd,_0x5783f2,_0x1ecd03,_0x3e1616,_0x1e60c7)=>{const _0x2321e9=a0_0xb0d4e9,_0x1768af=_[_0x2321e9(0x1e1)](_0x5783f2),_0x2f2d1e=shapes[_0x3e1616],_0x1e5ca4=textures[_0x1e60c7],_0x378675={'width':_0x5f0881,'height':_0x57fedd,'fill':_0x1e60c7===_0x2321e9(0x230)?'#'+_0x1ecd03:_0x2321e9(0x23b),'letterEscaped':_0x1768af,'shape-d':_0x2f2d1e['d'],'shape-char-x':_0x2f2d1e[_0x2321e9(0x206)],'shape-char-y':_0x2f2d1e[_0x2321e9(0x233)],'shape-font-size':_0x2f2d1e[_0x2321e9(0x1f8)],'def-pattern':_0x1e5ca4[_0x2321e9(0x200)]},_0x37ccff=_0x160476['replace'](/{([^{}]+)}/g,function(_0x3d7ee8,_0x581480){return _0x378675[_0x581480];});return _0x37ccff;},generateContent=(_0x218dca,_0x6991b0,_0x21498d,_0x424975)=>{const _0x3afbd4=a0_0xb0d4e9,_0x18ef51=[];return _0x218dca['toUpperCase']()[_0x3afbd4(0x1eb)](/\s/g,'')[_0x3afbd4(0x243)]('')['forEach'](_0x3ef0d5=>{const _0x96eda9=_0x3afbd4,_0x569f05=drawColor(_0x6991b0),_0x5bc7a1=createPage(pageTemplate,0x1ef,0x2a0,_0x3ef0d5,_0x569f05,_0x21498d,_0x424975);_0x18ef51[_0x96eda9(0x209)]({'svg':_0x5bc7a1});}),_0x18ef51;},validateInput=_0x1f982c=>{const _0x2a61aa=a0_0xb0d4e9,_0x19d971=document[_0x2a61aa(0x212)](_0x2a61aa(0x201));return _0x1f982c[_0x2a61aa(0x213)]===0x0?(_0x19d971[_0x2a61aa(0x1fa)][_0x2a61aa(0x1ef)]('is-invalid'),_0x19d971[_0x2a61aa(0x20d)]({'block':_0x2a61aa(0x21f)}),_0x2a61aa(0x208)):(_0x19d971[_0x2a61aa(0x1fa)][_0x2a61aa(0x1ff)](_0x2a61aa(0x22b)),_0x19d971['classList']['add'](_0x2a61aa(0x228)),'');},sendEvent=_0x420d34=>{const _0x583005=a0_0xb0d4e9;typeof pa!==_0x583005(0x1e3)&&(pa['track']({'name':_0x583005(0x1fe)}),pa['track']({'name':'click-generate_'+_0x420d34}));},prepareViewData=()=>{const _0x502dc0=a0_0xb0d4e9,_0x254449=Object[_0x502dc0(0x203)](shapes)[_0x502dc0(0x22e)](_0x95ac4e=>({'name':_0x95ac4e,'svg':createPage(pageTemplate,'100%',_0x502dc0(0x20e),'B',_0x502dc0(0x20f),_0x95ac4e,'none')})),_0x4a72c2=Object[_0x502dc0(0x203)](textures)[_0x502dc0(0x22e)](_0x758f50=>({'name':_0x758f50,'svg':createPage(pageTemplate,_0x502dc0(0x20e),_0x502dc0(0x20e),'B',_0x502dc0(0x20f),'rectangle',_0x758f50)}));return{'shapes':_0x254449,'colorPalettes':colorPalettes,'patterns':_0x4a72c2};},prepareFilename=_0x26e1e2=>{const _0x5b7c32=a0_0xb0d4e9,_0x377c4e=_0x26e1e2[_0x5b7c32(0x241)](0x0,0xa),_0x3955c8=_0x377c4e[_0x5b7c32(0x1eb)](/\s/g,'-');return _0x5b7c32(0x236)+_0x3955c8+_0x5b7c32(0x22c);};var app=new Vue({'el':a0_0xb0d4e9(0x1f0),'data':{'bannerValue':'','input_generateText_error':'','viewData':prepareViewData(),'selectedShape':a0_0xb0d4e9(0x237),'selectedColorPalette':0x0,'selectedPattern':a0_0xb0d4e9(0x230)},'methods':{'setSelectedShape':function(_0x3c03a7){const _0x12608f=a0_0xb0d4e9;this[_0x12608f(0x211)]=_0x3c03a7;},'setSelectedColorPalette':function(_0x50d543){const _0x3681e7=a0_0xb0d4e9;this[_0x3681e7(0x240)]=_0x50d543;},'setSelectedPattern':function(_0x4fe2aa){this['selectedPattern']=_0x4fe2aa;},'generate':function(){const _0x561fc8=a0_0xb0d4e9;this['input_generateText_error']=validateInput(this[_0x561fc8(0x22d)]);if(this[_0x561fc8(0x227)][_0x561fc8(0x213)]!==0x0)return;sendEvent(this['bannerValue']),pdfMake['fonts']=fonts;const _0x2c0576={'content':generateContent(this['bannerValue'],this['selectedColorPalette'],this[_0x561fc8(0x211)],this[_0x561fc8(0x204)]),'pageSize':'A4','pageOrientation':'portrait','pageMargins':[0x32,0x78,0x32,0x32],'info':{'title':'PDF\x20banner\x20generator','author':_0x561fc8(0x20b),'subject':'PDF\x20banner\x20generator','keywords':_0x561fc8(0x1e2),'creator':'www.bigdaybanner.com','producer':'www.bigdaybanner.com'},'defaultStyle':{'font':_0x561fc8(0x22a)}},_0x3fff8e=pdfMake['createPdf'](_0x2c0576);_0x3fff8e['download'](defaultFileName=prepareFilename(this[_0x561fc8(0x22d)]));}}});window['onload']=function(){const _0x2b94d4=a0_0xb0d4e9;document[_0x2b94d4(0x212)](_0x2b94d4(0x201))[_0x2b94d4(0x1fb)]();};function a0_0x30e7(_0x2263a3,_0x3eaf17){const _0x331f2b=a0_0x331f();return a0_0x30e7=function(_0x30e7cc,_0x337d9c){_0x30e7cc=_0x30e7cc-0x1e1;let _0x3ae914=_0x331f2b[_0x30e7cc];return _0x3ae914;},a0_0x30e7(_0x2263a3,_0x3eaf17);}function a0_0x331f(){const _0x33225e=['4698354FuLvTj','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20M0,','4CA3DD','random','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<path\x20\x20\x20d=\x22\x20M-','e9d8a6','001219','fontSize',',0\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20M','classList','focus','50%',';\x22\x20/>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</pattern>','click-generate_summary','remove','def','input_generateText','M3,3\x20L492,0\x20L492,500\x20L246,640\x20L3,500\x20Z','getOwnPropertyNames','selectedPattern','43aa8b','charX','be0aff','Please\x20insert\x20your\x20banner\x20text','push','9b2226','www.bigdaybanner.com','147df5','scrollIntoView','100%','e6f2ff','6675600RXLafd','selectedShape','getElementById','length','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20style=\x22stroke:orange;\x20stroke-width:','5171200mOTcTw','f9c74f','https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/fonts/hack-bold.woff','ee9b00','slice','ef476f','580aff','f94144','ffd300','0a9396','center','14348474XNwiOw','9a8f97','f3722c','1033462tXXSLy','M3,3\x20L492,3\x20L492,669\x20L246,531\x20L3,669\x20Z','M3,3\x20L492,3\x20L492,400\x20C492,700\x203,700\x203,400\x20Z','colors','input_generateText_error','is-valid','splice','Hack','is-invalid','.pdf','bannerValue','map','7260678YbkZMB','none','colorsDraw','005f73','charY','M3,3\x20L492,3\x20L492,669\x20L3,669\x20Z','<svg\x20width=\x22{width}\x22\x20height=\x22{height}\x22\x20viewBox=\x220\x200\x20495\x20672\x22><defs>{def-pattern}</defs><path\x20id=\x22shape0\x22\x20fill=\x22{fill}\x22\x20stroke=\x22#000000\x22\x20stroke-width=\x224\x22\x20d=\x22{shape-d}\x22\x20/><text\x20id=\x22shape1\x22\x20x=\x22{shape-char-x}\x22\x20y=\x22{shape-char-y}\x22\x20text-anchor=\x22middle\x22\x20fill=\x22#FFF\x22\x20dominant-baseline=\x22middle\x22\x20font-size=\x22{shape-font-size}\x22\x20font-stretch=\x22normal\x22\x20font-weight=\x22600\x22\x20style=\x22stroke:#000000;stroke-width:4px;\x22>{letterEscaped}</text></svg>','bigdaybanner_','tooth','400','f8961e','38%','url(#texture)','94d2bd','06d6a0','2973642oGlTaM','118ab2','selectedColorPalette','substring','a1ff0a','split','c3baba','escape','birthday\x20banner\x20generator\x20free\x20pdf','undefined','bb3e03','0aefff','\x22\x20height=\x22','0aff99','prvColor','073b4c','ca6702','replace','ff0000','<pattern\x20id=\x22texture\x22\x20viewBox=\x220,0,10,10\x22\x20width=\x222%\x22\x20height=\x222%\x22><polygon\x20points=\x220,0\x202,5\x200,10\x205,8\x2010,10\x208,5\x2010,0\x205,2\x22/></pattern>','90be6d','add','#app'];a0_0x331f=function(){return _0x33225e;};return a0_0x331f();}
+const pageTemplate = '<svg width="{width}" height="{height}" viewBox="0 0 495 672"><defs>{def-pattern}</defs><path id="shape0" fill="{fill}" stroke="#000000" stroke-width="4" d="{shape-d}" /><text id="shape1" x="{shape-char-x}" y="{shape-char-y}" text-anchor="middle" fill="#FFF" dominant-baseline="middle" font-size="{shape-font-size}" font-stretch="normal" font-weight="600" style="stroke:#000000;stroke-width:4px;">{letterEscaped}</text></svg>'
+
+const fonts = {
+    Hack: {
+        nornal: 'https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/fonts/hack-bold.woff',
+        bold: 'https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/fonts/hack-bold.woff',
+        italics: 'https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/fonts/hack-bold.woff',
+        bolditalics: 'https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/fonts/hack-bold.woff'
+    }
+}
+
+const shapes = {
+    tooth: {
+        d: "M3,3 L492,3 L492,669 L246,531 L3,669 Z",
+        charX: '50%',
+        charY: '50%',
+        fontSize: '400'
+    },
+    triangle: {
+        d: "M3,3 L492,3 L246,640 Z",
+        charX: '50%',
+        charY: '38%',
+        fontSize: '300'
+    },
+    tallTriangle: {
+        d: "M3,3 L492,0 L492,500 L246,640 L3,500 Z",
+        charX: '50%',
+        charY: '50%',
+        fontSize: '400'
+    },
+    bottomHalfCircle: {
+        d: "M3,3 L492,3 L492,400 C492,700 3,700 3,400 Z",
+        charX: '50%',
+        charY: '50%',
+        fontSize: '400'
+    },
+    rectangle: {
+        d: "M3,3 L492,3 L492,669 L3,669 Z",
+        charX: '50%',
+        charY: '50%',
+        fontSize: '400'
+    }
+}
+
+const colorPalettes = {
+    0: {
+        colors: ['f94144', 'f3722c', 'f8961e', 'f9c74f', '90be6d', '43aa8b', '4CA3DD']
+    },
+    1: {
+        colors: ["001219", "005f73", "0a9396", "94d2bd", "e9d8a6", "ee9b00", "ca6702", "bb3e03", "ae2012", "9b2226"]
+    },
+    2: {
+        colors: ["ef476f", "ffd166", "06d6a0", "118ab2", "073b4c"]
+    },
+    3: {
+        colors: ["ff0000", "ff8700", "ffd300", "deff0a", "a1ff0a", "0aff99", "0aefff", "147df5", "580aff", "be0aff"]
+    },
+    4: {
+        colors: ["9a8f97", "c3baba", "e9e3e6", "b2b2b2", "736f72"]
+    }
+
+}
+
+const _config_texture_stripes_size = 80
+const _config_texture_stripes_stripeWidth = 50
+const textures = {
+    'none': {
+        def: ''
+    },
+    'stars': {
+        def: '<pattern id="stars" viewBox="0,0,10,10" width="2%" height="2%"><polygon points="0,0 2,5 0,10 5,8 10,10 8,5 10,0 5,2"/></pattern>'
+    },
+    'stripes': {
+        def: `<pattern id="stripes" patternUnits="userSpaceOnUse" 
+                       width="${_config_texture_stripes_size}" height="${_config_texture_stripes_size}">
+                    <path   d=" M-${_config_texture_stripes_size / 2},${_config_texture_stripes_size / 2} L${_config_texture_stripes_size / 2},-${_config_texture_stripes_size / 2}
+                                M0,${_config_texture_stripes_size} L${_config_texture_stripes_size},0
+                                M${_config_texture_stripes_size - (_config_texture_stripes_stripeWidth / 2)},${_config_texture_stripes_size + (_config_texture_stripes_stripeWidth / 2)} L${_config_texture_stripes_size + (_config_texture_stripes_stripeWidth / 2)},${_config_texture_stripes_size - (_config_texture_stripes_stripeWidth / 2)}
+                            "
+                            style="stroke:orange; stroke-width:${_config_texture_stripes_stripeWidth};" />
+                </pattern>`
+    }
+}
+
+const drawColor = (paletteNumber) => {
+
+    const palette = colorPalettes[paletteNumber]
+
+    if (typeof palette.colorsDraw === 'undefined') {
+        palette.colorsDraw = []
+
+    }
+    if (palette.colorsDraw.length == 0) {
+        palette.colorsDraw = palette.colors.slice();
+    }
+
+    const colorsDraw = palette.colorsDraw
+    const prvColor = palette.prvColor
+
+    let randomIndex = Math.floor(Math.random() * colorsDraw.length)
+    let randomColor = colorsDraw[randomIndex]
+
+    // prevent same color in case of new colorsDraw (last form prev == new from brand new colorsDraw)
+    if (randomColor === prvColor) {
+        randomIndex = (randomIndex + 1 < colorsDraw.length) ? randomIndex + 1 : 0;
+        randomColor = colorsDraw[randomIndex]
+    }
+
+    // remove used color
+    colorsDraw.splice(randomIndex, 1)
+
+    palette.prvColor = randomColor
+
+    return randomColor
+}
+
+const createPage = (template, width, height, letter, color, shapeName, textureName) => {
+    const letterEscaped = _.escape(letter)
+
+    const shape = shapes[shapeName]
+    const texture = textures[textureName]
+
+    const templateValues = {
+        'width': width,
+        'height': height,
+        'fill': textureName === 'none' ? '#' + color : 'url(#' + textureName + ')',
+        'letterEscaped': letterEscaped,
+        'shape-d': shape.d,
+        'shape-char-x': shape.charX,
+        'shape-char-y': shape.charY,
+        'shape-font-size': shape.fontSize,
+        'def-pattern': texture.def
+    }
+    const page = template.replace(/{([^{}]+)}/g, function(keyExpr, key) {
+        return templateValues[key]
+    });
+    return page;
+}
+
+const generateContent = (textToGenerate, paletteNumber, shapeName, textureName) => {
+    const contentGenerated = []
+    textToGenerate.toUpperCase().replace(/\s/g, "").split("").forEach(letter => {
+        const randomColor = drawColor(paletteNumber)
+
+        const page = createPage(pageTemplate, 495, 672, letter, randomColor, shapeName, textureName)
+        contentGenerated.push({
+            svg: page
+        })
+    });
+    return contentGenerated;
+}
+
+const validateInput = (textToGenerate) => {
+
+    const inputEl = document.getElementById("input_generateText")
+
+    if (textToGenerate.length === 0) {
+        inputEl.classList.add('is-invalid');
+        inputEl.scrollIntoView({ block: "center" });
+        return 'Please insert your banner text'
+    } else {
+        inputEl.classList.remove('is-invalid')
+        inputEl.classList.add('is-valid')
+        return ''
+    }
+
+}
+
+const sendEvent = (textToGenerate) => {
+    if (typeof pa !== 'undefined') {
+        pa.track({
+            name: 'click-generate_summary'
+        })
+        pa.track({
+            name: 'click-generate_' + textToGenerate
+        })
+    }
+}
+
+const prepareViewData = () => {
+
+    const shapesToShow = Object.getOwnPropertyNames(shapes).map(
+        shapeName => ({
+            name: shapeName,
+            svg: createPage(pageTemplate, '100%', '100%', 'B', "e6f2ff", shapeName, 'none')
+        })
+    )
+
+    const patternToShow = Object.getOwnPropertyNames(textures).map(
+        patternName => ({
+            name: patternName,
+            svg: createPage(pageTemplate, '100%', '100%', 'B', "e6f2ff", 'rectangle', patternName)
+        })
+    )
+
+    return {
+        shapes: shapesToShow,
+        colorPalettes: colorPalettes,
+        patterns: patternToShow,
+    }
+}
+
+const prepareFilename = (textToGenerate) => {
+    const shortTextToGenerate = textToGenerate.substring(0, 10);
+    const dashInsteadOfSpaces = shortTextToGenerate.replace(/\s/g, '-')
+    return 'bigdaybanner_' + dashInsteadOfSpaces + '.pdf';
+}
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        bannerValue: '',
+        input_generateText_error: '',
+        viewData: prepareViewData(),
+        selectedShape: 'tooth',
+        selectedColorPalette: 0,
+        selectedPattern: 'none'
+    },
+    methods: {
+        setSelectedShape: function(selectedShapeName) {
+            this.selectedShape = selectedShapeName
+        },
+
+        setSelectedColorPalette: function(colorPaletteIndex) {
+            this.selectedColorPalette = colorPaletteIndex
+        },
+
+        setSelectedPattern: function(selectedPatternName) {
+            this.selectedPattern = selectedPatternName
+        },
+
+        generate: function() {
+            this.input_generateText_error = validateInput(this.bannerValue);
+            if (this.input_generateText_error.length !== 0) {
+                return
+            }
+
+            sendEvent(this.bannerValue);
+
+            pdfMake.fonts = fonts;
+
+            const docDefinition = {
+                content: generateContent(this.bannerValue, this.selectedColorPalette, this.selectedShape, this.selectedPattern),
+                pageSize: 'A4',
+                pageOrientation: 'portrait',
+                pageMargins: [50, 120, 50, 50],
+                info: {
+                    title: 'PDF banner generator',
+                    author: 'www.bigdaybanner.com',
+                    subject: 'PDF banner generator',
+                    keywords: 'birthday banner generator free pdf',
+                    creator: 'www.bigdaybanner.com',
+                    producer: 'www.bigdaybanner.com'
+                },
+                defaultStyle: {
+                    font: 'Hack'
+                },
+            };
+
+            const pdfDoc = pdfMake.createPdf(docDefinition);
+            pdfDoc.download(defaultFileName = prepareFilename(this.bannerValue));
+        }
+    }
+})
+
+window.onload = function() {
+    document.getElementById("input_generateText").focus();
+};
