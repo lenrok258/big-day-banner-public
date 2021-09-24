@@ -20,7 +20,7 @@ div.h2-section button.nav-link {
     right: 0;
     bottom: 0;
     background-color: rgba(255, 255, 255, 0.735);
-    z-index: 100;
+    z-index: 1;
     color: #6f9fe8;
     cursor: default;
 }
