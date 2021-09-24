@@ -80,7 +80,7 @@
                                         <div class="row card-radio-group">
                                             <div v-for="(shape, index) in viewData.shapes" v-cloak :class="{ 'selected': shape.name == selectedShape }" v-on:click="setSelectedShape(shape.name)" class="card card-radio">
                                                 <div v-if="!shape.free" class="disabled">&nbsp;</div>
-                                                <span v-if="!shape.free" class="position-absolute top-0 end-0 badge bg-primary">pro</span>
+                                                <span v-if="shape.free" class="position-absolute top-0 end-0 badge bg-danger">free</span>
                                                 <div class="card-body" v-html="shape.svg">
 
                                                 </div>
@@ -96,7 +96,7 @@
                                         <div class="row card-radio-group">
                                             <div v-for="(pattern, index) in viewData.patterns" v-cloak :class="{ 'selected': pattern.name == selectedPattern }" v-on:click="setSelectedPattern(pattern.name)" class="card card-radio">
                                                 <div v-if="!pattern.free" class="disabled">&nbsp;</div>
-                                                <span v-if="!pattern.free" class="position-absolute top-0 end-0 badge bg-primary">pro</span>
+                                                <span v-if="pattern.free" class="position-absolute top-0 end-0 badge bg-danger">free</span>
                                                 <div class="card-body" v-html="pattern.svg"></div>
                                             </div>
                                         </div>
@@ -110,7 +110,7 @@
                                         <div class="row card-radio-group">
                                             <div v-for="(palette, i) in viewData.colorPalettes" v-cloak :class="{ 'selected': i == selectedColorPalette }" v-on:click="setSelectedColorPalette(i)" class="card card-radio">
                                                 <div v-if="!palette.free" class="disabled">&nbsp;</div>
-                                                <span v-if="!palette.free" class="position-absolute top-0 end-0 badge bg-primary">pro</span>
+                                                <span v-if="palette.free" class="position-absolute top-0 end-0 badge bg-danger">free</span>
                                                 <div class="card-body">
                                                     <ul class="list-group">
                                                         <li v-for="color in palette.colors" class="list-group-item" :style="{backgroundColor: '#'+color}" style="height: 10px;">&nbsp</li>
