@@ -9,7 +9,7 @@
 
     <meta property="og:title" content="BigDayBanner.com: your own free banner pdf within seconds!">
     <meta property="og:description" content="Powerful, yet simple tool for creating beautiful banner printouts (pdf format). Just enter a banner text, click 'generate' button and download free pdf printout. Use it for your friend's birthday, graduation day or welcome party.">
-    <meta property="og:image" content="https://bigdaybanner.com/img/og-meta-image.jpg?version=202109261924">
+    <meta property="og:image" content="https://bigdaybanner.com/img/og-meta-image.jpg?version=202109261940">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="627">
 
@@ -26,7 +26,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <link href="./style.css?version=202109261924" rel="stylesheet">
+    <link href="./style.css?version=202109261940" rel="stylesheet">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
         <div class="row">
             <div class="col">
                 <div style="max-width: 1000px; width:100%; margin:0 auto;">
-                    <img src="./img/title-banner-100.jpg?version=202109261924" width="100%" style="padding-top: 20px; padding-bottom: 30px;" alt="big day banner welcome picture">
+                    <img src="./img/title-banner-100.jpg?version=202109261940" width="100%" style="padding-top: 20px; padding-bottom: 30px;" alt="big day banner welcome picture">
 
                     <div id="app">
                         <ol>
@@ -96,7 +96,8 @@
                                         <div class="row card-radio-group">
                                             <div v-for="(pattern, index) in viewData.patterns" v-cloak :class="{ 'selected': pattern.name == selectedPattern }" v-on:click="setSelectedPattern(pattern.name)" class="card card-radio">
                                                 <div v-if="!pattern.free" class="disabled">&nbsp;</div>
-                                                <span v-if="pattern.free" class="position-absolute top-0 end-0 badge bg-danger">free</span>
+                                                <span v-if="pattern.free" class="position-absolute top-0 end-0 badge bg-success">free</span>
+                                                <span v-if="!pattern.free" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
                                                 <div class="card-body" v-html="pattern.svg"></div>
                                             </div>
                                         </div>
@@ -110,7 +111,8 @@
                                         <div class="row card-radio-group">
                                             <div v-for="(palette, i) in viewData.colorPalettes" v-cloak :class="{ 'selected': i == selectedColorPalette }" v-on:click="setSelectedColorPalette(i)" class="card card-radio">
                                                 <div v-if="!palette.free" class="disabled">&nbsp;</div>
-                                                <span v-if="palette.free" class="position-absolute top-0 end-0 badge bg-danger">free</span>
+                                                <span v-if="palette.free" class="position-absolute top-0 end-0 badge bg-success">free</span>
+                                                <span v-if="!palette.free" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
                                                 <div class="card-body">
                                                     <ul class="list-group">
                                                         <li v-for="color in palette.colors" class="list-group-item" :style="{backgroundColor: '#'+color}" style="height: 10px;">&nbsp</li>
@@ -128,10 +130,11 @@
                                 <h2>
                                     <li>Generate printout</li>
                                 </h2>
-                                <button class="btn btn-primary" type="button" v-on:click="generate">
-                                    <span v-if="generatingInProgress" v-cloak><span class="spinner-border spinner-border-sm" role="status"></span>&nbsp;&nbsp;Generating...</span>
+                                <button class="btn btn-primary btn-lg" type="button" v-on:click="generate">
+                                    <span v-if="generatingInProgress" v-cloak><span class="spinner-border spinner-border-sm" role="status"></span></span>
                                     <span v-if="!generatingInProgress" ><i class="bi bi-file-earmark-pdf"></i> Download PDF</span>
                                 </button>
+                                <div v-if="showDownloadedText" v-cloak style="color:green; font-weight: bold;"><i class="bi bi-check"></i>&nbsp;Downloaded</div>
                             </div>
                             <div class="h2-section">
                                 <h2>
@@ -145,13 +148,14 @@
                     <div style="padding-top: 20px; text-align: right;">
                         <i class="bi bi-mailbox"></i>&nbsp;&nbsp;Suggestions, requests? Let us know:
                         <a href="mailto:hello@bigdaybanner.com">hello@bigdaybanner.com</a>
-                        <div style="font-size:xx-small;color: gray;">version: 202109261924</div>
+                        <div style="font-size:xx-small;color: gray;">version: 202109261940</div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Modal: purchusing -->
+
         <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -235,7 +239,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.0/vfs_fonts.min.js'></script>
     <!-- analytics -->
     <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
-    <script src="./js/684fbaa6-db4e-4ffc-8fc1-cbdb79db649b.js?version=202109261924"></script>
+    <script src="./js/684fbaa6-db4e-4ffc-8fc1-cbdb79db649b.js?version=202109261940"></script>
 </body>
 
 </html>

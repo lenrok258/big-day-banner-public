@@ -96,7 +96,8 @@
                                         <div class="row card-radio-group">
                                             <div v-for="(pattern, index) in viewData.patterns" v-cloak :class="{ 'selected': pattern.name == selectedPattern }" v-on:click="setSelectedPattern(pattern.name)" class="card card-radio">
                                                 <div v-if="!pattern.free" class="disabled">&nbsp;</div>
-                                                <span v-if="pattern.free" class="position-absolute top-0 end-0 badge bg-danger">free</span>
+                                                <span v-if="pattern.free" class="position-absolute top-0 end-0 badge bg-success">free</span>
+                                                <span v-if="!pattern.free" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
                                                 <div class="card-body" v-html="pattern.svg"></div>
                                             </div>
                                         </div>
@@ -110,7 +111,8 @@
                                         <div class="row card-radio-group">
                                             <div v-for="(palette, i) in viewData.colorPalettes" v-cloak :class="{ 'selected': i == selectedColorPalette }" v-on:click="setSelectedColorPalette(i)" class="card card-radio">
                                                 <div v-if="!palette.free" class="disabled">&nbsp;</div>
-                                                <span v-if="palette.free" class="position-absolute top-0 end-0 badge bg-danger">free</span>
+                                                <span v-if="palette.free" class="position-absolute top-0 end-0 badge bg-success">free</span>
+                                                <span v-if="!palette.free" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
                                                 <div class="card-body">
                                                     <ul class="list-group">
                                                         <li v-for="color in palette.colors" class="list-group-item" :style="{backgroundColor: '#'+color}" style="height: 10px;">&nbsp</li>
@@ -128,10 +130,11 @@
                                 <h2>
                                     <li>Generate printout</li>
                                 </h2>
-                                <button class="btn btn-primary" type="button" v-on:click="generate">
-                                    <span v-if="generatingInProgress" v-cloak><span class="spinner-border spinner-border-sm" role="status"></span>&nbsp;&nbsp;Generating...</span>
+                                <button class="btn btn-primary btn-lg" type="button" v-on:click="generate">
+                                    <span v-if="generatingInProgress" v-cloak><span class="spinner-border spinner-border-sm" role="status"></span></span>
                                     <span v-if="!generatingInProgress" ><i class="bi bi-file-earmark-pdf"></i> Download PDF</span>
                                 </button>
+                                <div v-if="showDownloadedText" v-cloak style="color:green; font-weight: bold;"><i class="bi bi-check"></i>&nbsp;Downloaded</div>
                             </div>
                             <div class="h2-section">
                                 <h2>
@@ -152,6 +155,7 @@
         </div>
 
         <!-- Modal: purchusing -->
+
         <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
