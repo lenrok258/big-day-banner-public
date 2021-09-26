@@ -176,7 +176,7 @@
                                             <p class="card-text">Pay only 1$ and generate a few banners.</p>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-primary btn-lg">Buy for 1$</button>
+                                            <button class="btn btn-primary btn-lg">Buy for $1</button>
                                         </div>
                                     </div>
                                 </div>
@@ -189,7 +189,7 @@
                                             <p class="card-text">Take your time. For 3$ download any number of banners for 24 hours.</p>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-primary btn-lg">Buy for 3$</button>
+                                            <button class="btn btn-primary btn-lg">Buy for $3</button>
                                         </div>
                                     </div>
                                 </div>
@@ -200,10 +200,10 @@
                                             <h5>30 days</h5>
                                         </div>
                                         <div class="card-body">
-                                            <p class="card-text">Best price for a long access. Less then 0.34$ for a day.</p>
+                                            <p class="card-text">Best price for a long access. Less then $0.34 for a day.</p>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-primary btn-lg">Buy for 10$</button>
+                                            <button class="btn btn-primary btn-lg">Buy for $10</button>
                                         </div>
                                     </div>
                                 </div>
