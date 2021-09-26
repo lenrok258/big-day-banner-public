@@ -46,7 +46,7 @@
                                     <li>Insert banner text</li>
                                 </h2>
 
-                                <input id="input_generateText" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="" v-model="bannerValue" style="margin-bottom: 0pxs; max-width: 500px;" maxlength="100" required>
+                                <input id="input_generateText" type="text" class="form-control border-primary" placeholder="" aria-label="" aria-describedby="" v-model="bannerValue" style="margin-bottom: 0pxs; max-width: 500px;" maxlength="100" required>
                                 <div class="input_generateText_error" v-if="input_generateText_error" style="color: indianred;" v-cloak>
                                     {{input_generateText_error}}
                                 </div>
