@@ -164,17 +164,15 @@
 
                         Unlimitied access to all shapes, patterns and colors palettes.
                         <br/><br/>
-                        <!-- <div style="text-align: center; margin-bottom: 40px;"> -->
                         <div class="container">
                             <div class="row" style="text-align: center; ">
                                 <div class="col" style="margin-bottom: 10px;">
                                     <div class="card border-primary" style="width: 100%; height: 100%; min-width: 200px;">
-                                        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
                                         <div class="card-header">
                                             <h5>1 hour</h5>
                                         </div>
                                         <div class="card-body">
-                                            <p class="card-text">Pay only 1$ and genereate few banners</p>
+                                            <p class="card-text">Pay only 1$ and generate a few banners.</p>
                                         </div>
                                         <div class="card-footer">
                                             <button class="btn btn-primary btn-lg">Buy for 1$</button>
@@ -183,12 +181,11 @@
                                 </div>
                                 <div class="col" style="margin-bottom: 10px;">
                                     <div class="card border-primary" style="width: 100%; height: 100%; min-width: 200px; ">
-                                        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
                                         <div class="card-header">
                                             <h5>24 hours</h5>
                                         </div>
                                         <div class="card-body">
-                                            <p class="card-text">Take your time. For 3$ genreate any number of banners for 24 hours.</p>
+                                            <p class="card-text">Take your time. For 3$ download any number of banners for 24 hours.</p>
                                         </div>
                                         <div class="card-footer">
                                             <button class="btn btn-primary btn-lg">Buy for 3$</button>
@@ -198,12 +195,11 @@
 
                                 <div class="col" style="margin-bottom: 10px;">
                                     <div class="card border-primary" style="width: 100%; height: 100%; ; min-width: 200px;">
-                                        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
                                         <div class="card-header">
-                                            <h5>7 days</h5>
+                                            <h5>30 days</h5>
                                         </div>
                                         <div class="card-body">
-                                            <p class="card-text">Best price for a long access. Less then 1.5$ for a day.</p>
+                                            <p class="card-text">Best price for a long access. Less then 0.34$ for a day.</p>
                                         </div>
                                         <div class="card-footer">
                                             <button class="btn btn-primary btn-lg">Buy for 10$</button>
@@ -211,11 +207,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- <button class="btn btn-primary btn-lg">1$<br/>1 hour</button>
-                            <button class="btn btn-primary btn-lg">3$<br/>24 hour</button>
-                            <button class="btn btn-primary btn-lg">10$<br/>7 days</button> -->
-                            <!-- </div> -->
 
                             <div class="row" style="margin-top: 40px;">
                                 <h5>I have a code already</h5>
