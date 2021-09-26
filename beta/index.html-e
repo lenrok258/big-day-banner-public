@@ -80,7 +80,8 @@
                                         <div class="row card-radio-group">
                                             <div v-for="(shape, index) in viewData.shapes" v-cloak :class="{ 'selected': shape.name == selectedShape }" v-on:click="setSelectedShape(shape.name)" class="card card-radio">
                                                 <div v-if="!shape.free" class="disabled">&nbsp;</div>
-                                                <span v-if="shape.free" class="position-absolute top-0 end-0 badge bg-danger">free</span>
+                                                <span v-if="shape.free" class="position-absolute top-0 end-0 badge bg-success">free</span>
+                                                <span v-if="!shape.free" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
                                                 <div class="card-body" v-html="shape.svg">
 
                                                 </div>
