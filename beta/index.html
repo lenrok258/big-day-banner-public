@@ -9,7 +9,7 @@
 
     <meta property="og:title" content="BigDayBanner.com: your own free banner pdf within seconds!">
     <meta property="og:description" content="Powerful, yet simple tool for creating beautiful banner printouts (pdf format). Just enter a banner text, click 'generate' button and download free pdf printout. Use it for your friend's birthday, graduation day or welcome party.">
-    <meta property="og:image" content="https://bigdaybanner.com/img/og-meta-image.jpg?version=202110081344">
+    <meta property="og:image" content="https://bigdaybanner.com/img/og-meta-image.jpg?version=202110081507">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="627">
 
@@ -26,7 +26,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <link href="./style.css?version=202110081344" rel="stylesheet">
+    <link href="./style.css?version=202110081507" rel="stylesheet">
 </head>
 
 <body>
@@ -37,7 +37,10 @@
         <div class="row">
             <div class="col">
                 <div style="max-width: 1000px; width:100%; margin:0 auto;">
-                    <img src="./img/title-banner-100.jpg?version=202110081344" width="100%" style="padding-top: 20px; padding-bottom: 30px;" alt="big day banner welcome picture">
+                    <div v-if="!seinfeld" v-cloak style="text-align: right; font-size: 14px;">Free version, <a v-on:click="showPurchaseModal" href="#" class="link-primary">unloack all options</a></div>
+                    <div v-if="seinfeld" v-cloak style="text-align: right; font-size: 14px;">Full version, valid until: 2021-10-23, 11:45</a></div>
+
+                    <img src="./img/title-banner-100.jpg?version=202110081507" width="100%" style="padding-top: 20px; padding-bottom: 30px;" alt="big day banner welcome picture">
 
 
                     <ol>
@@ -79,9 +82,9 @@
 
                                     <div class="row card-radio-group">
                                         <div v-for="(shape, index) in viewData.shapes" v-cloak :class="{ 'selected': shape.name == selectedShape }" v-on:click="setSelectedShape(shape.name)" class="card card-radio">
-                                            <div v-if="!shape.free" class="disabled">&nbsp;</div>
-                                            <span v-if="shape.free" class="position-absolute top-0 end-0 badge bg-success">free</span>
-                                            <span v-if="!shape.free" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
+                                            <div v-if="!shape.free && !seinfeld" class="disabled" title="available after unlocking">&nbsp;</div>
+                                            <span v-if="shape.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-success">free</span>
+                                            <span v-if="!shape.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
                                             <div class="card-body" v-html="shape.svg">
                                             </div>
                                         </div>
@@ -95,9 +98,9 @@
 
                                     <div class="row card-radio-group">
                                         <div v-for="(pattern, index) in viewData.patterns" v-cloak :class="{ 'selected': pattern.name == selectedPattern }" v-on:click="setSelectedPattern(pattern.name)" class="card card-radio">
-                                            <div v-if="!pattern.free" class="disabled">&nbsp;</div>
-                                            <span v-if="pattern.free" class="position-absolute top-0 end-0 badge bg-success">free</span>
-                                            <span v-if="!pattern.free" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
+                                            <div v-if="!pattern.free && !seinfeld" class="disabled" title="available after unlocking">&nbsp;</div>
+                                            <span v-if="pattern.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-success">free</span>
+                                            <span v-if="!pattern.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
                                             <div class="card-body" v-html="pattern.svg"></div>
                                         </div>
                                     </div>
@@ -110,13 +113,12 @@
 
                                     <div class="row card-radio-group">
                                         <div v-for="(palette, i) in viewData.colorPalettes" v-cloak :class="{ 'selected': i == selectedColorPalette }" v-on:click="setSelectedColorPalette(i)" class="card card-radio">
-                                            <div v-if="!palette.free" class="disabled">&nbsp;</div>
-                                            <span v-if="palette.free" class="position-absolute top-0 end-0 badge bg-success">free</span>
-                                            <span v-if="!palette.free" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
+                                            <div v-if="!palette.free && !seinfeld" class="disabled" title="available after unlocking">&nbsp;</div>
+                                            <span v-if="palette.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-success">free</span>
+                                            <span v-if="!palette.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
                                             <div class="card-body">
                                                 <ul class="list-group">
-                                                    <li v-for="color in palette.colors" class="list-group-item" :style="{backgroundColor: '#'+color}" style="height: 10px;">
-                                                        &nbsp</li>
+                                                    <li v-for="color in palette.colors" class="list-group-item" :style="{backgroundColor: '#'+color}" style="height: 10px;">&nbsp</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -149,7 +151,7 @@
                     <div style="padding-top: 20px; text-align: right;">
                         <i class="bi bi-mailbox"></i>&nbsp;&nbsp;Suggestions, requests? Let us know:
                         <a href="mailto:hello@bigdaybanner.com">hello@bigdaybanner.com</a>
-                        <div style="font-size:xx-small;color: gray;">version: 202110081344</div>
+                        <div style="font-size:xx-small;color: gray;">version: 202110081507</div>
                     </div>
                 </div>
             </div>
@@ -268,7 +270,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.0/vfs_fonts.min.js'></script>
     <!-- analytics -->
     <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
-    <script src="./js/684fbaa6-db4e-4ffc-8fc1-cbdb79db649b.js?version=202110081344"></script>
+    <script src="./js/684fbaa6-db4e-4ffc-8fc1-cbdb79db649b.js?version=202110081507"></script>
     <!-- payments -->
     <script src="https://www.paypal.com/sdk/js?client-id=AZbBslay51eI8VRXPHtfNtgQ76bnTunTLhrgMDPtmSwmbeSGlynZYvbOU7PnXz0kjWzWCQhB5SG7e1XL"></script>
 </body>

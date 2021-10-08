@@ -37,6 +37,9 @@
         <div class="row">
             <div class="col">
                 <div style="max-width: 1000px; width:100%; margin:0 auto;">
+                    <div v-if="!seinfeld" v-cloak style="text-align: right; font-size: 14px;">Free version, <a v-on:click="showPurchaseModal" href="#" class="link-primary">unloack all options</a></div>
+                    <div v-if="seinfeld" v-cloak style="text-align: right; font-size: 14px;">Full version, valid until: 2021-10-23, 11:45</a></div>
+
                     <img src="./img/title-banner-100.jpg?version=__version__" width="100%" style="padding-top: 20px; padding-bottom: 30px;" alt="big day banner welcome picture">
 
 
@@ -79,9 +82,9 @@
 
                                     <div class="row card-radio-group">
                                         <div v-for="(shape, index) in viewData.shapes" v-cloak :class="{ 'selected': shape.name == selectedShape }" v-on:click="setSelectedShape(shape.name)" class="card card-radio">
-                                            <div v-if="!shape.free" class="disabled">&nbsp;</div>
-                                            <span v-if="shape.free" class="position-absolute top-0 end-0 badge bg-success">free</span>
-                                            <span v-if="!shape.free" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
+                                            <div v-if="!shape.free && !seinfeld" class="disabled" title="available after unlocking">&nbsp;</div>
+                                            <span v-if="shape.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-success">free</span>
+                                            <span v-if="!shape.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
                                             <div class="card-body" v-html="shape.svg">
                                             </div>
                                         </div>
@@ -95,9 +98,9 @@
 
                                     <div class="row card-radio-group">
                                         <div v-for="(pattern, index) in viewData.patterns" v-cloak :class="{ 'selected': pattern.name == selectedPattern }" v-on:click="setSelectedPattern(pattern.name)" class="card card-radio">
-                                            <div v-if="!pattern.free" class="disabled">&nbsp;</div>
-                                            <span v-if="pattern.free" class="position-absolute top-0 end-0 badge bg-success">free</span>
-                                            <span v-if="!pattern.free" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
+                                            <div v-if="!pattern.free && !seinfeld" class="disabled" title="available after unlocking">&nbsp;</div>
+                                            <span v-if="pattern.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-success">free</span>
+                                            <span v-if="!pattern.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
                                             <div class="card-body" v-html="pattern.svg"></div>
                                         </div>
                                     </div>
@@ -110,13 +113,12 @@
 
                                     <div class="row card-radio-group">
                                         <div v-for="(palette, i) in viewData.colorPalettes" v-cloak :class="{ 'selected': i == selectedColorPalette }" v-on:click="setSelectedColorPalette(i)" class="card card-radio">
-                                            <div v-if="!palette.free" class="disabled">&nbsp;</div>
-                                            <span v-if="palette.free" class="position-absolute top-0 end-0 badge bg-success">free</span>
-                                            <span v-if="!palette.free" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
+                                            <div v-if="!palette.free && !seinfeld" class="disabled" title="available after unlocking">&nbsp;</div>
+                                            <span v-if="palette.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-success">free</span>
+                                            <span v-if="!palette.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
                                             <div class="card-body">
                                                 <ul class="list-group">
-                                                    <li v-for="color in palette.colors" class="list-group-item" :style="{backgroundColor: '#'+color}" style="height: 10px;">
-                                                        &nbsp</li>
+                                                    <li v-for="color in palette.colors" class="list-group-item" :style="{backgroundColor: '#'+color}" style="height: 10px;">&nbsp</li>
                                                 </ul>
                                             </div>
                                         </div>
