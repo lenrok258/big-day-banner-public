@@ -25,6 +25,9 @@ div.h2-section button.nav-link {
     cursor: default;
 }
 
+.main-step {
+    font-weight: 400;
+}
 
 /* CARDS */
 
