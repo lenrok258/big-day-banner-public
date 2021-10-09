@@ -502,7 +502,7 @@ var app = new Vue({
             }
             this.seinfeld = true;
             this.seinfeldCode = inputCode;
-            this.seinfeldCodeUntilText = moment(timestamp).format('MMMM Do YYYY, hh:mm');
+            this.seinfeldCodeUntilText = moment(timestamp).format('MMMM Do YYYY, HH:mm');
             localStorage['403e433e-5e0e-46bc-995e-fcf2691ffe35'] = inputCode
         },
     },
