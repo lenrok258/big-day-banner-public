@@ -452,8 +452,10 @@ var app = new Vue({
                 },
                 onApprove: function (data, actions) {
                     return actions.order.capture().then(function (orderData) {
-                        const validUntil = Date.now() + periodMs + config.time_added_to_each_payment
-                        const validUntil36 = btoa(validUntil.toString(36)).replace('=', '@')
+
+                        const validUntilMs = Date.now() + periodMs + config.time_added_to_each_payment
+                        const validUntilMins = validUntilMs - (validUntilMs % 60000)
+                        const validUntil36 = btoa(validUntilMins.toString(36)).replace('=', '@')
                         app.applyCode(validUntil36)
 
                         // Show a success message within this page, e.g.
@@ -492,17 +494,27 @@ var app = new Vue({
 
         applyCode: function (inputCode) {
             console.log("apply code" + inputCode)
-            // TODO: error handling, check if not to far in the future (99999999999)
+            const timestamp = parseInt(atob(inputCode.replace('@', '=')), 36)
+            console.log("code timestamp=" + timestamp)
+
+            // check if full mins
+            if ((timestamp % 60000) != 0) {
+                return -2
+            }
+
             const now = Date.now()
             const days31InFuture = now + 2678400000
-            const timestamp = parseInt(atob(inputCode.replace('@', '=')), 36)
+
+            // in future, not later then 31 days in the future
             if (now > timestamp || timestamp > days31InFuture) {
                 return -1
             }
+
+            // enable full mode
             this.seinfeld = true;
+            localStorage['403e433e-5e0e-46bc-995e-fcf2691ffe35'] = inputCode
             this.seinfeldCode = inputCode;
             this.seinfeldCodeUntilText = moment(timestamp).format('MMMM Do YYYY, HH:mm');
-            localStorage['403e433e-5e0e-46bc-995e-fcf2691ffe35'] = inputCode
         },
     },
 
