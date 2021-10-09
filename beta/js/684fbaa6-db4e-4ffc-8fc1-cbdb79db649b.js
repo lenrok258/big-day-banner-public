@@ -439,10 +439,6 @@ var app = new Vue({
                     break;
             }
 
-            const validUntil = Date.now() + periodMs + config.time_added_to_each_payment
-            const validUntil36 = btoa(validUntil.toString(36)).replace('=', '@')
-            this.applyCode(validUntil36)
-
             const paypalProps = {
                 createOrder: function (data, actions) {
                     return actions.order.create({
@@ -456,7 +452,9 @@ var app = new Vue({
                 },
                 onApprove: function (data, actions) {
                     return actions.order.capture().then(function (orderData) {
-                        app.seinfeld = true
+                        const validUntil = Date.now() + periodMs + config.time_added_to_each_payment
+                        const validUntil36 = btoa(validUntil.toString(36)).replace('=', '@')
+                        app.applyCode(validUntil36)
 
                         // Show a success message within this page, e.g.
                         const element = document.getElementById('paymentContainer');
@@ -493,6 +491,7 @@ var app = new Vue({
         },
 
         applyCode: function (inputCode) {
+            console.log("apply code" + inputCode)
             // TODO: error handling, check if not to far in the future (99999999999)
             const now = Date.now()
             const days31InFuture = now + 2678400000
