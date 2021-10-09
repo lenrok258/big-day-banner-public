@@ -128,21 +128,21 @@ const colorPalettes = {
 
 }
 
-const _config_texture_stripes_size = 80
-const _config_texture_stripes_stripeWidth = 50
-const textures = {
+const _config_pattern_stripes_size = 80
+const _config_pattern_stripes_stripeWidth = 50
+const pattern = {
     none: {
         def: '',
         free: true,
     },
     stripes: {
         def: `<pattern id="{patternId}" patternUnits="userSpaceOnUse" 
-                       width="${_config_texture_stripes_size}" height="${_config_texture_stripes_size}">
-                    <path   d=" M-${_config_texture_stripes_size / 2},${_config_texture_stripes_size / 2} L${_config_texture_stripes_size / 2},-${_config_texture_stripes_size / 2}
-                                M0,${_config_texture_stripes_size} L${_config_texture_stripes_size},0
-                                M${_config_texture_stripes_size - (_config_texture_stripes_stripeWidth / 2)},${_config_texture_stripes_size + (_config_texture_stripes_stripeWidth / 2)} L${_config_texture_stripes_size + (_config_texture_stripes_stripeWidth / 2)},${_config_texture_stripes_size - (_config_texture_stripes_stripeWidth / 2)}
+                       width="${_config_pattern_stripes_size}" height="${_config_pattern_stripes_size}">
+                    <path   d=" M-${_config_pattern_stripes_size / 2},${_config_pattern_stripes_size / 2} L${_config_pattern_stripes_size / 2},-${_config_pattern_stripes_size / 2}
+                                M0,${_config_pattern_stripes_size} L${_config_pattern_stripes_size},0
+                                M${_config_pattern_stripes_size - (_config_pattern_stripes_stripeWidth / 2)},${_config_pattern_stripes_size + (_config_pattern_stripes_stripeWidth / 2)} L${_config_pattern_stripes_size + (_config_pattern_stripes_stripeWidth / 2)},${_config_pattern_stripes_size - (_config_pattern_stripes_stripeWidth / 2)}
                             "
-                            style="stroke:{color}; stroke-width:${_config_texture_stripes_stripeWidth};" />
+                            style="stroke:{color}; stroke-width:${_config_pattern_stripes_stripeWidth};" />
                 </pattern>`,
         free: true,
     },
@@ -204,14 +204,14 @@ const drawColor = (paletteNumber) => {
     return nextColor
 }
 
-const createPage = (template, width, height, letter, color, shapeName, textureName) => {
+const createPage = (template, width, height, letter, color, shapeName, patternName) => {
     const letterEscaped = _.escape(letter)
 
     const shape = shapes[shapeName]
 
     // prepare pattern
-    const patternTemplate = textures[textureName].def
-    const patternId = textureName + color
+    const patternTemplate = pattern[patternName].def
+    const patternId = patternName + color
     const patternValueObj = {
         color: '#' + color,
         patternId: patternId
@@ -224,7 +224,7 @@ const createPage = (template, width, height, letter, color, shapeName, textureNa
     const templateValues = {
         'width': width,
         'height': height,
-        'fill': textureName === 'none' ? '#' + color : 'url(#' + patternId + ')',
+        'fill': patternName === 'none' ? '#' + color : 'url(#' + patternId + ')',
         'letterEscaped': letterEscaped,
         'shape-d': shape.d,
         'shape-char-x': shape.charX,
@@ -239,12 +239,12 @@ const createPage = (template, width, height, letter, color, shapeName, textureNa
     return page;
 }
 
-const generateContent = (textToGenerate, paletteNumber, shapeName, textureName) => {
+const generateContent = (textToGenerate, paletteNumber, shapeName, patternName) => {
     const contentGenerated = []
     textToGenerate.toUpperCase().replace(/\s/g, "").split("").forEach(letter => {
         const randomColor = drawColor(paletteNumber)
 
-        const page = createPage(pageTemplate, 495, 672, letter, randomColor, shapeName, textureName)
+        const page = createPage(pageTemplate, 495, 672, letter, randomColor, shapeName, patternName)
         contentGenerated.push({
             svg: page
         })
@@ -289,10 +289,10 @@ const prepareViewData = () => {
         })
     )
 
-    const patternToShow = Object.getOwnPropertyNames(textures).map(
+    const patternToShow = Object.getOwnPropertyNames(pattern).map(
         patternName => ({
             name: patternName,
-            free: textures[patternName].free,
+            free: pattern[patternName].free,
             svg: createPage(designUI_patternPreview, '100%', '100%', '.', config.designui_color_preview, 'rectangle', patternName)
         })
     )
@@ -358,7 +358,7 @@ var app = new Vue({
         },
 
         setSelectedPattern: function (selectedPatternName) {
-            const pattern = textures[selectedPatternName]
+            const pattern = pattern[selectedPatternName]
             if (!pattern.free && !this.seinfeld) {
                 this.showPurchaseModal();
                 return;
