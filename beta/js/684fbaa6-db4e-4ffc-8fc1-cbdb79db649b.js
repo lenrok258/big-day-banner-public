@@ -76,31 +76,31 @@ const colorPalettes = {
         free: true
     },
     1: {
-        colors: ['ff0000', 'ff8700', 'ffd60a', '97e519', '09cd44', '2386e2', '580aff', 'be0aff'],
+        colors: ['ff0000', 'ff8700', 'ffd60a', '0ac419', '127a14', '0066ff', '0020ed', 'be0aff'],
         free: false
     },
     2: {
-        colors: ['ffbe0b', 'fb5607', 'ff006e', 'c11cad', '8338ec', '3a86ff', '1a33e9', '10bd58'],
+        colors: ['ffbe0b', 'fa7334', 'fa006c', 'c11cad', '721aed', '307efc', '1a33e9', '009c41'],
         free: false
     },
     3: {
-        colors: ['f9c80e', 'f86624', 'ea3546', '7a4da4', '43bccd', '4bbc22', '358618'],
+        colors: ['fad039', 'f79640', 'ea3546', '8a47c9', '27b2c4', '2f61bd', '3fbd11', '337d18'],
         free: false
     },
     4: {
-        colors: ['ffadad', 'ffd6a5', 'fdffb6', 'caffbf', '9bf6ff', 'a0c4ff', 'bdb2ff', 'ffc6ff'],
+        colors: ['ffa6a6', 'ffd6a5', 'fdffb6', 'caffbf', '9cf7ff', 'a4d3f5', 'ffc6ff', 'c6baff'],
         free: false
     },
     5: {
-        colors: ['f58bbd', 'ffc6ab', 'fcf6bd', 'd0f4de', 'a4f0ab', '60e88d', 'a9def9', 'e4c1f9'],
+        colors: ['f5abce', 'ffc6ab', 'lfcf6bd', 'bcf5d2', 'abf0a3', 'a9def9', 'e4c1f9', 'b6adff'],
         free: false
     },
     6: {
-        colors: ['70d6ff', '757ae8', 'c787f2', 'ff70a6', 'ff9770', 'ffd670', 'e9ff70', 'a4e543'],
+        colors: ['7ddaff', '9296e8', 'c787f2', 'ff70a6', 'ff9770', 'ffd670', 'f9ff8a', 'b0e660'],
         free: false
     },
     7: {
-        colors: ['5f0f40', '9a031e', 'dd3000', 'fb8b24', 'e36414', '4a7795', '0f4c5c', '1c7b47'],
+        colors: ['5f0f40', '9a031e', 'dd3000', 'fb8b24', 'e36414', '4c6fc2', '0f4c5c', '1c7b47'],
         free: false
     },
     8: {
@@ -108,20 +108,29 @@ const colorPalettes = {
         free: false
     },
     9: {
-        colors: ['8ea604', 'f5bb00', 'ec9f05', 'd76a03', 'bf3100', '934336', '504db0', '8b3573'],
+        colors: ['c9e8f3', '90bcda', '4991d0', '1271bf', '2153e8', '0a36e6', '0d2ac0', '0f1d99'],
         free: false
     },
     10: {
-        colors: ['287271', '2a9d8f', 'e9c46a', 'f4a261', 'e76f51', 'd24927', '8d6eb1', '4e5db3'],
+        colors: ['f8cc5d', 'f0b23f', 'e89821', 'd4851a', 'd96a21', 'd94f00', 'ac3f0c', '852505'],
         free: false
     },
     11: {
-        colors: ['f94144', 'f3722c', 'f8961e', 'f9c74f', '90be6d', '43aa8b', '577590'],
+        colors: ['048757', '36a35f', '67bf67', '9cdb97', 'f08f8f', 'f04242', 'd42929', 'b62b2b'],
+        free: false,
+    },
+    12: {
+        colors: ['f3dc08', 'f6a31d', 'f15e28', 'd63f3c', 'c81630', '9e1026', '7a1124', '561122'],
         free: false,
         order: 'FIXED'
     },
-    12: {
-        colors: ['ffadad', 'ffd6a5', 'fdffb6', 'caffbf', '9bf6ff', 'a0c4ff', 'bdb2ff', 'ffc6ff'],
+    13: {
+        colors: ['370617', '6a040f', '9d0208', 'c40000', 'dc2f02', 'e85d04', 'f48c06', 'ffba08'],
+        free: false,
+        order: 'FIXED'
+    },
+    14: {
+        colors: ['f94144', 'f3722c', 'f8961e', 'f9c74f', '90be6d', '43aa8b', '577590'],
         free: false,
         order: 'FIXED'
     }
