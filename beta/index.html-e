@@ -147,7 +147,8 @@
                     </ol>
                     <div style="padding-top: 20px; text-align: right;">
                         <div v-if="!seinfeld" v-cloak>Free version, <a v-on:click="showPurchaseModal" href="#" class="link-primary">unloack all options here</a></div>
-                        <div v-if="seinfeld" v-cloak>Full version, valid until: {{seinfeldCodeUntilText}}, your code: {{seinfeldCode}}</a></div>
+                        <div v-if="seinfeld" v-cloak>Full version, valid until: {{seinfeldCodeUntilText}}, your code: {{seinfeldCode}}</a>
+                        </div>
                         <i class="bi bi-mailbox"></i>&nbsp;&nbsp;Suggestions, requests? Let us know:
                         <a href="mailto:hello@bigdaybanner.com">hello@bigdaybanner.com</a>
                         <div style="font-size:xx-small;color: gray;">version: __version__</div>
@@ -265,8 +266,8 @@
 
 
     <!-- pdfmake -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.0/pdfmake.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.0/vfs_fonts.min.js'></script>
+    <script defer src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js'></script>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.0/vfs_fonts.min.js'></script> -->
     <!-- analytics -->
     <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
     <!-- payments -->
