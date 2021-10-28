@@ -303,6 +303,13 @@ const prepareFilename = (textToGenerate) => {
     return 'bigdaybanner_' + dashInsteadOfSpaces + '.pdf';
 }
 
+const showCodeApplySuccessful = () => {
+    // todo: change modal title
+    const element = document.getElementById('paymentModalBody');
+    element.innerHTML = '';
+    element.innerHTML = '<h3>Thank you for your payment</h3>';
+}
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -466,10 +473,7 @@ var app = new Vue({
                         const validUntil36 = btoa(validUntilMins.toString(36)).replace('=', '@')
                         app.applyCode(validUntil36)
 
-                        // Show a success message within this page, e.g.
-                        const element = document.getElementById('paymentContainer');
-                        element.innerHTML = '';
-                        element.innerHTML = '<h3>Thank you for your payment</h3>';
+                        showCodeApplySuccessful();
                     });
                 },
 
@@ -538,6 +542,7 @@ var app = new Vue({
             } catch (error) {
                 return -99;
             }
+            return 0;
         },
     },
 
