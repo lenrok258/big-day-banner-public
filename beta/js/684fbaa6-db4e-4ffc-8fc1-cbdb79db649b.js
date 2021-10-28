@@ -308,6 +308,7 @@ var app = new Vue({
     data: {
         bannerValue: '',
         input_generateText_error: '',
+        input_applyCode_error: '',
         viewData: prepareViewData(),
         selectedShape: 'tooth',
         selectedColorPalette: 0,
@@ -495,7 +496,19 @@ var app = new Vue({
 
         applyCodeInput: function () {
             console.log('unlocking');
-            console.log(this.applyCode(this.seinfeldCodeInput))
+            const applyCodeResult = this.applyCode(this.seinfeldCodeInput)
+            console.log(applyCodeResult);
+
+            const inputEl = document.getElementById("input_applyCode")
+            if (applyCodeResult === 0) {
+                inputEl.classList.remove('is-invalid')
+                inputEl.classList.add('is-valid')
+                this.input_applyCode_error = ''
+            } else {
+                inputEl.classList.remove('border-primary');
+                inputEl.classList.add('is-invalid');
+                this.input_applyCode_error = 'Invalid code'
+            }
         },
 
         applyCode: function (inputCode) {

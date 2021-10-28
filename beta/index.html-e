@@ -243,14 +243,17 @@
                             </div>
                         </div>
 
-                        <div class="row" style="margin-top: 40px;">
+                        <div class="row" style="margin-top: 40px; margin-bottom: 40px; ">
                             <h5>I have a code already</h5>
 
                             <div class="input-group">
-                                <input required style="margin-bottom: 40px; width: 100px;" type="text" class="form-control border-primary" v-model="seinfeldCodeInput">
+                                <input id="input_applyCode" style="width: 100px;" type="text" class="form-control border-primary" v-model="seinfeldCodeInput">
                                 <div class="input-group-append">
                                     <button class="btn btn-success" type="button" v-on:click="applyCodeInput">Unlock</button>
                                 </div>
+                            </div>
+                            <div class="input_applyCode_error" v-if="input_applyCode_error" style="color: indianred;" v-cloak>
+                                {{input_applyCode_error}}
                             </div>
                         </div>
                     </div>
