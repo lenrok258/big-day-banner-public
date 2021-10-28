@@ -46,7 +46,7 @@
                                 <li>Insert banner text</li>
                             </h2>
 
-                            <input id="input_generateText" type="text" class="form-control border-primary" placeholder="" aria-label="" aria-describedby="" v-model="bannerValue" style="margin-bottom: 0pxs; max-width: 500px;" maxlength="100" required>
+                            <input id="input_generateText" type="text" class="form-control border-primary" placeholder="" v-model="bannerValue" style="margin-bottom: 0pxs; max-width: 500px;" maxlength="100" @change="validateBannerText">
                             <div class="input_generateText_error" v-if="input_generateText_error" style="color: indianred;" v-cloak>
                                 {{input_generateText_error}}
                             </div>
@@ -247,7 +247,7 @@
                             <h5>I have a code already</h5>
 
                             <div class="input-group">
-                                <input style="margin-bottom: 40px; width: 100px;" type="text" class="form-control border-primary" v-model="seinfeldCodeInput">
+                                <input required style="margin-bottom: 40px; width: 100px;" type="text" class="form-control border-primary" v-model="seinfeldCodeInput">
                                 <div class="input-group-append">
                                     <button class="btn btn-success" type="button" v-on:click="applyCodeInput">Unlock</button>
                                 </div>
