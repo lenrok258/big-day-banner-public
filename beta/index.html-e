@@ -118,6 +118,9 @@
                                                     <li v-for="color in palette.colors" class="list-group-item" :style="{backgroundColor: '#'+color}" style="height: 10px;">&nbsp</li>
                                                 </ul>
                                             </div>
+                                            <footer style="text-align: center; margin-bottom: 3px;color: gray; font-size: small;">
+                                                {{palette.name}}
+                                            </footer>
                                         </div>
                                     </div>
 
