@@ -146,11 +146,15 @@
                         </div>
                     </ol>
                     <div style="padding-top: 20px; text-align: right;">
-                        <div v-if="!seinfeld" v-cloak>Free version, <a v-on:click="showPurchaseModal" href="#" class="link-primary">unloack all options here</a></div>
-                        <div v-if="seinfeld" v-cloak>Full version, valid until: {{seinfeldCodeUntilText}}, your code: {{seinfeldCode}}</a></div>
+                        <div v-if="!seinfeld" v-cloak>
+                            Free version, <a v-on:click="showPurchaseModal" href="#" class="link-primary">unloack all options here</a>
+                        </div>
+                        <div v-if="seinfeld" v-cloak>Full version, valid until: {{seinfeldCodeUntilText}}, your code: {{seinfeldCode}}
+                        </div>
                         <i class="bi bi-mailbox"></i>&nbsp;&nbsp;Suggestions, requests? Let us know:
                         <a href="mailto:hello@bigdaybanner.com">hello@bigdaybanner.com</a>
-                        <div style="font-size:xx-small;color: gray;">version: __version__</div>
+
+                        <div style="font-size:xx-small;color: gray;">Templates by <a href="https://www.heropatterns.com/" target="_blank">heropatterns</a>, version: __version__</div>
                     </div>
                 </div>
             </div>
