@@ -34,8 +34,6 @@
 
     <div id="app" class="container">
 
-        <!-- <button type="button" class="btn btn-primary" id="liveToastBtn" v-on:click="showToast">Show live toast</button> -->
-
         <div class="row">
             <div class="col">
                 <div style="max-width: 1000px; width:100%; margin:0 auto;">
@@ -297,12 +295,13 @@
                             <h5>(use it to unlock all options on other device)</h5>
                         </div>
 
-                        <!-- payment/code redeem error -->
+                        <!-- payment error -->
 
                         <div v-show="payment.show === 'ERROR'" style="text-align: center;">
-                            <h1 style="color:green; padding-bottom: 50px; padding-top: 50px;"><i class="bi bi-check-circle" style="color:green"></i>&nbsp;Success</h1>
-                            <h2>Your code: {{seinfeldCode}}</h2>
-                            <h5>(use it to unlock all options on other device)</h5>
+                            <h1 style="color:red; padding-bottom: 50px; padding-top: 50px;"><i class="bi bi-exclamation-circle" style="color:red"></i>&nbsp;Payment failed</h1>
+                            <h2>Payment provider returned an error.</h2>
+                            <h4>In case of any concerns, please contact us at:</h4>
+                            <h4><i class="bi bi-mailbox"></i>&nbsp;<a href="mailto:hello@bigdaybanner.com">hello@bigdaybanner.com</h4>
                         </div>
 
                     </div>
@@ -310,18 +309,15 @@
             </div>
         </div>
 
-        <!-- toasts -->
+        <!-- toast -->
 
         <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
-            <div id="liveToast" class="toast" role="alert">
-                <div class="toast-header">
-                    <i class="bi bi-check-circle" style="color:green"></i>&nbsp;
-                    <strong class="me-auto">header</strong>
-                    <small></small>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
-                </div>
-                <div class="toast-body">
-                    Hello, world! This is a toast message.
+            <div id="liveToast" class="toast align-items-center text-black bg-warning border-0" data-bs-autohide="false" role="alert">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        {{toast.body}}
+                    </div>
+                    <button type="button" class="btn-close btn-close-black me-2 m-auto" data-bs-dismiss="toast"></button>
                 </div>
             </div>
         </div>
