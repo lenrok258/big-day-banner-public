@@ -9,7 +9,7 @@
 
     <meta property="og:title" content="BigDayBanner.com: your own free banner pdf within seconds!">
     <meta property="og:description" content="Powerful, yet simple tool for creating beautiful banner printouts (pdf format). Just enter a banner text, click 'generate' button and download free pdf printout. Use it for your friend's birthday, graduation day or welcome party.">
-    <meta property="og:image" content="https://bigdaybanner.com/img/og-meta-image.jpg?version=202111071335">
+    <meta property="og:image" content="https://bigdaybanner.com/img/og-meta-image.jpg?version=202111081714">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="627">
 
@@ -26,7 +26,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <link href="./style.css?version=202111071335" rel="stylesheet">
+    <link href="./style.css?version=202111081714" rel="stylesheet">
 </head>
 
 <body>
@@ -34,11 +34,13 @@
 
     <div id="app" class="container">
 
+        <!-- <button type="button" class="btn btn-primary" id="liveToastBtn" v-on:click="showToast">Show live toast</button> -->
+
         <div class="row">
             <div class="col">
                 <div style="max-width: 1000px; width:100%; margin:0 auto;">
 
-                    <img src="./img/title-banner-100.jpg?version=202111071335" width="100%" style="padding-top: 20px; padding-bottom: 30px;" alt="big day banner welcome picture">
+                    <img src="./img/title-banner-100.jpg?version=202111081714" width="100%" style="padding-top: 20px; padding-bottom: 30px;" alt="big day banner welcome picture">
 
                     <ol>
                         <div class="h2-section">
@@ -175,7 +177,7 @@
                 <span class="text-muted">
                     <i class="bi bi-mailbox"></i>&nbsp;&nbsp;Suggestions, requests? Let us know: <a href="mailto:hello@bigdaybanner.com">hello@bigdaybanner.com</a>
                 </span>
-                <div style="font-size:xx-small;color: gray;">Templates by <a href="https://www.heropatterns.com/" target="_blank">heropatterns</a>, version: 202111071335</div>
+                <div style="font-size:xx-small;color: gray;">Templates by <a href="https://www.heropatterns.com/" target="_blank">heropatterns</a>, version: 202111081714</div>
             </div>
 
         </footer>
@@ -295,13 +297,38 @@
                             <h5>(use it to unlock all options on other device)</h5>
                         </div>
 
+                        <!-- payment/code redeem error -->
+
+                        <div v-show="payment.show === 'ERROR'" style="text-align: center;">
+                            <h1 style="color:green; padding-bottom: 50px; padding-top: 50px;"><i class="bi bi-check-circle" style="color:green"></i>&nbsp;Success</h1>
+                            <h2>Your code: {{seinfeldCode}}</h2>
+                            <h5>(use it to unlock all options on other device)</h5>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- toasts -->
+
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast" role="alert">
+                <div class="toast-header">
+                    <i class="bi bi-check-circle" style="color:green"></i>&nbsp;
+                    <strong class="me-auto">header</strong>
+                    <small></small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                </div>
+                <div class="toast-body">
+                    Hello, world! This is a toast message.
+                </div>
+            </div>
+        </div>
+
     </div>
-    <!-- bootstrap container -->
+    <!-- bootstrap and vuejs container -->
+
 
     <!-- pdfmake -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js'></script>
@@ -311,7 +338,7 @@
     <!-- payments -->
     <script src="https://www.paypal.com/sdk/js?client-id=AZbBslay51eI8VRXPHtfNtgQ76bnTunTLhrgMDPtmSwmbeSGlynZYvbOU7PnXz0kjWzWCQhB5SG7e1XL"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="./js/684fbaa6-db4e-4ffc-8fc1-cbdb79db649b.js?version=202111071335"></script>
+    <script src="./js/684fbaa6-db4e-4ffc-8fc1-cbdb79db649b.js?version=202111081714"></script>
 
 </body>
 

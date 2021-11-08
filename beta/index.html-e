@@ -34,6 +34,8 @@
 
     <div id="app" class="container">
 
+        <!-- <button type="button" class="btn btn-primary" id="liveToastBtn" v-on:click="showToast">Show live toast</button> -->
+
         <div class="row">
             <div class="col">
                 <div style="max-width: 1000px; width:100%; margin:0 auto;">
@@ -166,8 +168,8 @@
                     </div>
                     <div v-else v-cloak>
                         <i class="bi bi-star"></i>&nbsp;Full version
-                        <br/>Valid until: {{seinfeldCodeUntilText}}
-                        <br/>Your code: {{seinfeldCode}}
+                        <br />Valid until: {{seinfeldCodeUntilText}}
+                        <br />Your code: <b>{{seinfeldCode}}</b>
                     </div>
                 </span>
             </div>
@@ -175,7 +177,7 @@
                 <span class="text-muted">
                     <i class="bi bi-mailbox"></i>&nbsp;&nbsp;Suggestions, requests? Let us know: <a href="mailto:hello@bigdaybanner.com">hello@bigdaybanner.com</a>
                 </span>
-                <!-- <div style="font-size:xx-small;color: gray;">Templates by <a href="https://www.heropatterns.com/" target="_blank">heropatterns</a>, version: __version__</div> -->
+                <div style="font-size:xx-small;color: gray;">Templates by <a href="https://www.heropatterns.com/" target="_blank">heropatterns</a>, version: __version__</div>
             </div>
 
         </footer>
@@ -191,12 +193,36 @@
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div id="paymentModalBody" class="modal-body">
+                    <div class="modal-body">
 
-                        Unlimitied access to all shapes, patterns and colors palettes.
-                        <br /><br />
+                        <!-- payment process -->
 
-                        <div class="container" v-show="!payment.show">
+                        <div v-show="payment.show === 'PROCESS'" style="text-align: center;">
+                            <div class="card border-primary" style="width: 100%; max-width: 500px; margin: auto;">
+                                <div class="card-header container-fluid">
+                                    <div class="row">
+                                        <div class="col-10" style="text-align: left;">
+                                            <h5>{{payment.periodTitle}} access</h5>
+                                        </div>
+                                        <div class="col" style="text-align: right;">
+                                            <button type="button" class="btn-close" v-on:click="closePayment"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div id="paypalContainer"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- payment options -->
+
+                        <div class="container" v-show="payment.show === 'OPTIONS'">
+
+                            <div class="row">
+                                Unlimitied access to all shapes, patterns and colors palettes.
+                                <br /><br />
+                            </div>
                             <div class="row" style="text-align: center; ">
                                 <div class="col" style="margin-bottom: 10px;">
                                     <div class="card border-primary" style="width: 100%; height: 100%; min-width: 200px;">
@@ -245,48 +271,64 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <div class="row" style="margin-top: 40px; margin-bottom: 40px; ">
+                                <h5>I have a code already</h5>
 
-                        <!-- payment -->
-
-                        <div id="paymentContainer" v-show="payment.show" style="text-align: center;">
-                            <div class="card border-primary" style="width: 100%; max-width: 500px; margin: auto;">
-                                <div class="card-header container-fluid">
-                                    <div class="row">
-                                        <div class="col-10" style="text-align: left;">
-                                            <h5>{{payment.periodTitle}} access</h5>
-                                        </div>
-                                        <div class="col" style="text-align: right;">
-                                            <button type="button" class="btn-close" v-on:click="closePayment"></button>
-                                        </div>
+                                <div class="input-group">
+                                    <input id="input_applyCode" style="width: 100px;" type="text" class="form-control border-primary" v-model="seinfeldCodeInput">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button" v-on:click="applyCodeInput">
+                                            <span v-if="payment.codeRedeemInProgress" v-cloak><span class="spinner-border spinner-border-sm" role="status"></span></span>
+                                            <span v-if="!payment.codeRedeemInProgress"><i class="bi bi-file-earmark-pdf"></i> Unlock</span>
+                                        </button>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <div id="paypalContainer"></div>
+                                <div class="input_applyCode_error" v-if="input_applyCode_error" style="color: indianred;" v-cloak>
+                                    {{input_applyCode_error}}
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row" style="margin-top: 40px; margin-bottom: 40px; ">
-                            <h5>I have a code already</h5>
+                        <!-- payment/code redeem sucess -->
 
-                            <div class="input-group">
-                                <input id="input_applyCode" style="width: 100px;" type="text" class="form-control border-primary" v-model="seinfeldCodeInput">
-                                <div class="input-group-append">
-                                    <button class="btn btn-success" type="button" v-on:click="applyCodeInput">Unlock</button>
-                                </div>
-                            </div>
-                            <div class="input_applyCode_error" v-if="input_applyCode_error" style="color: indianred;" v-cloak>
-                                {{input_applyCode_error}}
-                            </div>
+                        <div v-show="payment.show === 'SUCCESS'" style="text-align: center;">
+                            <h1 style="color:green; padding-bottom: 50px; padding-top: 50px;"><i class="bi bi-check-circle" style="color:green"></i>&nbsp;Success</h1>
+                            <h2>Your code: {{seinfeldCode}}</h2>
+                            <h5>(use it to unlock all options on other device)</h5>
                         </div>
+
+                        <!-- payment/code redeem error -->
+
+                        <div v-show="payment.show === 'ERROR'" style="text-align: center;">
+                            <h1 style="color:green; padding-bottom: 50px; padding-top: 50px;"><i class="bi bi-check-circle" style="color:green"></i>&nbsp;Success</h1>
+                            <h2>Your code: {{seinfeldCode}}</h2>
+                            <h5>(use it to unlock all options on other device)</h5>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- toasts -->
+
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast" role="alert">
+                <div class="toast-header">
+                    <i class="bi bi-check-circle" style="color:green"></i>&nbsp;
+                    <strong class="me-auto">header</strong>
+                    <small></small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                </div>
+                <div class="toast-body">
+                    Hello, world! This is a toast message.
+                </div>
+            </div>
+        </div>
+
     </div>
-    <!-- bootstrap container -->
+    <!-- bootstrap and vuejs container -->
+
 
     <!-- pdfmake -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js'></script>
