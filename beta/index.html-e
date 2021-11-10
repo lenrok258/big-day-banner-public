@@ -73,6 +73,11 @@
 
                             <div class="tab-content" id="pills-tabContent">
 
+                                <div v-if="!mountedCompleted" id="tab-content-loader" style="padding: 30px">
+                                    <span class="spinner-border spinner-border-sm" role="status"></span>
+                                </span></div>
+                                
+
                                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel">
 
                                     <!-- Shapes panel -->
@@ -301,7 +306,7 @@
                             <h1 style="color:red; padding-bottom: 50px; padding-top: 50px;"><i class="bi bi-exclamation-circle" style="color:red"></i>&nbsp;Payment failed</h1>
                             <h2>Payment provider returned an error.</h2>
                             <h4>In case of any concerns, please contact us at:</h4>
-                            <h4><i class="bi bi-mailbox"></i>&nbsp;<a href="mailto:hello@bigdaybanner.com">hello@bigdaybanner.com</h4>
+                            <h4><i class="bi bi-mailbox"></i>&nbsp;<a href="mailto:hello@bigdaybanner.com">hello@bigdaybanner.com</a></h4>
                         </div>
 
                     </div>
