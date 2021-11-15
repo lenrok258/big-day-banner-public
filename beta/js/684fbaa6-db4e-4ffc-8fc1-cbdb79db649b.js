@@ -577,7 +577,7 @@ var app = new Vue({
         },
 
         showPaymentCancel: function () {
-            this.payment.alert.warn = 'Payment was cancelled.'
+            this.payment.alert.warn = 'Payment was cancelled'
         },
 
         showToast: function (message) {
