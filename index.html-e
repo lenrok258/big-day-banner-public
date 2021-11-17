@@ -4,18 +4,16 @@
 <head>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Powerful, yet simple tool for creating beautiful banner printouts (pdf format). Just enter a banner text, click 'generate' button and download free pdf printout. Use it for your friend's birthday, graduation day or welcome party.">
+    <meta name="description" content="Powerful, yet simple tool for creating beautiful banner printouts (pdf format). Just enter a banner text, click 'generate' button and download free pdf printout. Use it for your friend's birthday, graduation day or welcome party.">
     <meta name="google" content="notranslate">
 
     <meta property="og:title" content="BigDayBanner.com: your own free banner pdf within seconds!">
-    <meta property="og:description"
-        content="Powerful, yet simple tool for creating beautiful banner printouts (pdf format). Just enter a banner text, click 'generate' button and download free pdf printout. Use it for your friend's birthday, graduation day or welcome party.">
+    <meta property="og:description" content="Powerful, yet simple tool for creating beautiful banner printouts (pdf format). Just enter a banner text, click 'generate' button and download free pdf printout. Use it for your friend's birthday, graduation day or welcome party.">
     <meta property="og:image" content="https://bigdaybanner.com/img/og-meta-image.jpg?version=__version__">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="627">
 
-    <title>BigDayBanner.com: your own free banner pdf within seconds!</title>
+    <title>BigDayBanner.com: your own free banner pdf printout within seconds!</title>
 
     <!-- production version, optimized for size and speed -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -25,71 +23,333 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-umd-min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <link href="./style.css" rel="stylesheet">
+    <link href="./style.css?version=__version__" rel="stylesheet">
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"></script>
-    <div class="container-fluid">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <div id="app" class="container">
 
         <div class="row">
             <div class="col">
                 <div style="max-width: 1000px; width:100%; margin:0 auto;">
-                    <img src="./img/title-banner-100.jpg?version=__version__" width="100%" style="padding-top: 20px;"
-                        alt="big day banner welcome picture">
 
-                    <div id="app">
-                        <ol>
-                            <h2>
+                    <img src="./img/title-banner-100.jpg?version=__version__" width="100%" style="padding-top: 20px; padding-bottom: 30px;" alt="big day banner welcome picture">
+
+                    <ol>
+                        <div class="h2-section">
+                            <h2 class="main-step">
                                 <li>Insert banner text</li>
                             </h2>
-                            <input id="input_generateText" type="text" class="form-control" placeholder="" aria-label=""
-                                aria-describedby="" v-model="bannerValue" style="margin-bottom: 0pxs; max-width: 500px;"
-                                maxlength="100" required>
-                            <div class="input_generateText_error" v-if="input_generateText_error"
-                                style="color: indianred;" v-cloak>
+
+                            <input id="input_generateText" type="text" class="form-control border-primary" placeholder="" v-model="bannerValue" style="margin-bottom: 0pxs; max-width: 500px;" maxlength="100" @change="validateBannerText">
+                            <div class="input_generateText_error" v-if="input_generateText_error" style="color: indianred;" v-cloak>
                                 {{input_generateText_error}}
                             </div>
-
-                            <h2>
-                                <li>Generate pdf printout</li>
+                        </div>
+                        <div class="h2-section">
+                            <h2 class="main-step">
+                                <li>Customize your design</li>
                             </h2>
-                            <button class="btn btn-primary" type="button" id="button-addon2" v-on:click="generate">
-                                Generate banner PDF
+
+                            <!-- Navigation panel -->
+
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab">
+                                        Shape
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab">
+                                        Pattern
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab">
+                                        Color palette
+                                    </button>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content" id="pills-tabContent">
+
+                                <div v-if="!mountedCompleted" id="tab-content-loader" style="padding: 30px">
+                                    <span class="spinner-border spinner-border-sm" role="status"></span>
+                                    </span>
+                                </div>
+
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel">
+
+                                    <!-- Shapes panel -->
+
+                                    <div class="row card-radio-group">
+                                        <div v-for="(shape, index) in viewData.shapes" v-cloak :class="{ 'selected': shape.name == selectedShape }" v-on:click="setSelectedShape(shape.name)" class="card card-radio">
+                                            <div v-if="!shape.free && !seinfeld" class="disabled" title="available after unlocking">&nbsp;</div>
+                                            <span v-if="shape.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-success">free</span>
+                                            <span v-if="!shape.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
+                                            <div class="card-body" v-html="shape.svg">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel">
+
+                                    <!-- Patterns panel -->
+
+                                    <div class="row card-radio-group">
+                                        <div v-for="(pattern, index) in viewData.patterns" v-cloak :class="{ 'selected': pattern.name == selectedPattern }" v-on:click="setSelectedPattern(pattern.name)" class="card card-radio">
+                                            <div v-if="!pattern.free && !seinfeld" class="disabled" title="available after unlocking">&nbsp;</div>
+                                            <span v-if="pattern.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-success">free</span>
+                                            <span v-if="!pattern.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
+                                            <div class="card-body" v-html="pattern.svg"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel">
+
+                                    <!-- Color palettes panel -->
+
+                                    <div class="row card-radio-group">
+                                        <div v-for="(palette, i) in viewData.colorPalettes" v-cloak :class="{ 'selected': i == selectedColorPalette }" v-on:click="setSelectedColorPalette(i)" class="card card-radio">
+                                            <div v-if="!palette.free && !seinfeld" class="disabled" title="available after unlocking">&nbsp;</div>
+                                            <span v-if="palette.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-success">free</span>
+                                            <span v-if="!palette.free && !seinfeld" class="position-absolute top-0 end-0 badge bg-danger"><i class="bi bi-lock-fill"></i></span>
+                                            <div class="card-body">
+                                                <ul class="list-group">
+                                                    <li v-for="color in palette.colors" class="list-group-item" :style="{backgroundColor: '#'+color}" style="height: 10px;">&nbsp</li>
+                                                </ul>
+                                            </div>
+                                            <footer style="text-align: center; margin-bottom: 3px;color: gray; font-size: small;">
+                                                {{palette.name}}
+                                            </footer>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="h2-section">
+                            <h2 class="main-step">
+                                <li>Generate printout</li>
+                            </h2>
+                            <button class="btn btn-primary btn-lg" type="button" v-on:click="generate">
+                                <span v-if="generatingInProgress" v-cloak><span class="spinner-border spinner-border-sm" role="status"></span></span>
+                                <span v-if="!generatingInProgress"><i class="bi bi-file-earmark-pdf"></i> Download PDF</span>
                             </button>
-
-                            <h2>
-                                <li>Cut out the letters, connect with a string</li>
+                            <div v-if="showDownloadedText" v-cloak style="color:green; font-weight: bold;"><i class="bi bi-check"></i>&nbsp;Downloaded</div>
+                        </div>
+                        <div class="h2-section">
+                            <h2 class="main-step">
+                                <li>
+                                    Cut out the letters, connect with a string, enjoy! <i class="bi bi-emoji-smile"></i>
+                                </li>
                             </h2>
-
-                            <h2>
-                                <li>Enjoy!</li>
-                            </h2>
-                        </ol>
-                    </div>
+                        </div>
+                    </ol>
                     <div style="padding-top: 20px; text-align: right;">
-                        <i class="bi bi-mailbox"></i>&nbsp;&nbsp;Suggestions, requests? Let us know:
-                        <a href="mailto:hello@bigdaybanner.com">hello@bigdaybanner.com</a>
-                        <div style="font-size:xx-small;color: gray;">version: __version__</div>
+
+
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- #footer -->
+
+        <footer class="d-flex py-3 my-4 border-top" style=" font-size: small;">
+            <div class="col-md-6">
+                <span class="text-muted">
+                    <div v-if="!seinfeld" v-cloak>
+                        Free version, <a v-on:click="showPurchaseModal" href="#" class="link-primary">unloack all options</a>
+                    </div>
+                    <div v-else v-cloak>
+                        <i class="bi bi-star"></i>&nbsp;Full version
+                        <br />Valid until: {{seinfeldCodeUntilText}}
+                        <br />Your code: <b>{{seinfeldCode}}</b>
+                    </div>
+                </span>
+            </div>
+            <div class="col-md-6" style="text-align: right;">
+                <span class="text-muted">
+                    <i class="bi bi-mailbox"></i>&nbsp;&nbsp;Suggestions, requests? <a href="mailto:hello@bigdaybanner.com">hello@bigdaybanner.com</a>
+                </span>
+                <div style="font-size:xx-small;color: gray;">Templates by <a href="https://www.heropatterns.com/" target="_blank">heropatterns</a>, version: __version__</div>
+            </div>
+
+        </footer>
+
+        <!-- Modal: #purchusing -->
+
+        <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            <h2>Unlock all options</h2>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <!-- Modal body -->
+
+                    <div class="modal-body">
+
+                        <!-- Modal alerts -->
+
+                        <div v-if="payment.alert.error" class="alert alert-danger" role="alert">
+                            <span v-html="payment.alert.error"></span>
+                        </div>
+                        <div v-if="payment.alert.warn" class="alert alert-warning" role="alert">
+                            <span v-html="payment.alert.warn"></span>
+
+                        </div>
+
+                        <!-- payment process -->
+
+                        <div v-show="payment.show === 'PROCESS'" style="text-align: center;">
+                            <div class="card border-primary" style="width: 100%; max-width: 500px; margin: auto;">
+                                <div class="card-header container-fluid">
+                                    <div class="row">
+                                        <div class="col-10" style="text-align: left;">
+                                            <h5>{{payment.periodTitle}} access</h5>
+                                        </div>
+                                        <div class="col" style="text-align: right;">
+                                            <button type="button" class="btn-close" v-on:click="closePayment"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div id="paypalContainer"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- payment options -->
+
+                        <div class="container" v-show="payment.show === 'OPTIONS'">
+
+                            <div class="row" style="padding-top: 10px; padding-bottom: 10px;">
+                                Unlimitied access to all shapes, patterns and colors palettes.
+                            </div>
+
+                            <div class="row" style="text-align: center; ">
+                                <div class="col" style="margin-bottom: 10px;">
+                                    <div class="card border-primary" style="width: 100%; height: 100%; min-width: 200px;">
+                                        <div class="card-header">
+                                            <h5>1 hour</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">Pay only $1 and generate a few banners.</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-primary btn-lg" v-on:click="openPayment(1)">
+                                                Buy for $1
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col" style="margin-bottom: 10px;">
+                                    <div class="card border-primary" style="width: 100%; height: 100%; min-width: 200px; ">
+                                        <div class="card-header">
+                                            <h5>24 hours</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">Take your time. For $3 generate any number of banners for 24 hours.</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-primary btn-lg" v-on:click="openPayment(2)">
+                                                Buy for $3
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col" style="margin-bottom: 10px;">
+                                    <div class="card border-primary" style="width: 100%; height: 100%; ; min-width: 200px;">
+                                        <div class="card-header">
+                                            <h5>30 days</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">Best price for a long access. Less then $0.34 for a day.</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-primary btn-lg" v-on:click="openPayment(3)">
+                                                Buy for $10
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 40px; margin-bottom: 40px; ">
+                                <h5>I have a code already</h5>
+
+                                <div class="input-group">
+                                    <input id="input_applyCode" style="width: 100px;" type="text" class="form-control border-primary" v-model="seinfeldCodeInput">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="button" v-on:click="applyCodeInput">
+                                            <span v-if="payment.codeRedeemInProgress" v-cloak><span class="spinner-border spinner-border-sm" role="status"></span></span>
+                                            <span v-if="!payment.codeRedeemInProgress"><i class="bi bi-unlock"></i> Unlock</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="input_applyCode_error" v-if="input_applyCode_error" style="color: indianred;" v-cloak>
+                                    {{input_applyCode_error}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- payment/code redeem sucess -->
+
+                        <div v-show="payment.show === 'SUCCESS'" style="text-align: center;">
+                            <h1 style="color:green; padding-bottom: 50px; padding-top: 50px;"><i class="bi bi-check-circle" style="color:green"></i>&nbsp;Success</h1>
+                            <h2>Your code: {{seinfeldCode}}</h2>
+                            <h5>(use it to unlock all options on other device)</h5>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- toast -->
+
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast align-items-center text-black bg-warning border-0" data-bs-autohide="false" role="alert">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        {{toast.body}}
+                    </div>
+                    <button type="button" class="btn-close btn-close-black me-2 m-auto" data-bs-dismiss="toast"></button>
+                </div>
+            </div>
+        </div>
+
     </div>
+    <!-- bootstrap and vuejs container -->
+
 
     <!-- pdfmake -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.0/pdfmake.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.0/vfs_fonts.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js'></script>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.0/vfs_fonts.min.js'></script> -->
     <!-- analytics -->
-    <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js"
-        id="ZwSg9rf6GA" async defer></script>
+    <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
+    <!-- payments -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AQn51KohmhY6VJtFHcHLtoZOdcUv7Ze6WcIj7FEs4tFSfrY7UwP_bhZJy0vdLiN-OtEhEIv2vrJ572Xq"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="./js/684fbaa6-db4e-4ffc-8fc1-cbdb79db649b.js?version=__version__"></script>
+
 </body>
 
 </html>
