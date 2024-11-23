@@ -379,7 +379,12 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js'></script>
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.0/vfs_fonts.min.js'></script> -->
     <!-- analytics -->
-    <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
+    <!-- Cronitor RUM -->
+    <script async src="https://rum.cronitor.io/script.js"></script>
+    <script>
+        window.cronitor = window.cronitor || function () { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+        cronitor('config', { clientKey: 'f94bc4d28f5d806f410c83c0c1ecf70f' });
+    </script>
     <!-- payments -->
     <script src="https://www.paypal.com/sdk/js?client-id=AQn51KohmhY6VJtFHcHLtoZOdcUv7Ze6WcIj7FEs4tFSfrY7UwP_bhZJy0vdLiN-OtEhEIv2vrJ572Xq"></script>
 
