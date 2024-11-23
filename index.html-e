@@ -29,6 +29,13 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-umd-min.js"></script>
 
+    <!-- analytics -->
+    <script async src="https://rum.cronitor.io/script.js"></script>
+    <script>
+        window.cronitor = window.cronitor || function () { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+        cronitor('config', { clientKey: 'f94bc4d28f5d806f410c83c0c1ecf70f' });
+    </script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
@@ -374,17 +381,8 @@
     </div>
     <!-- bootstrap and vuejs container -->
 
-
     <!-- pdfmake -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js'></script>
-    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.0/vfs_fonts.min.js'></script> -->
-    <!-- analytics -->
-    <!-- Cronitor RUM -->
-    <script async src="https://rum.cronitor.io/script.js"></script>
-    <script>
-        window.cronitor = window.cronitor || function () { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
-        cronitor('config', { clientKey: 'f94bc4d28f5d806f410c83c0c1ecf70f' });
-    </script>
     <!-- payments -->
     <script src="https://www.paypal.com/sdk/js?client-id=AQn51KohmhY6VJtFHcHLtoZOdcUv7Ze6WcIj7FEs4tFSfrY7UwP_bhZJy0vdLiN-OtEhEIv2vrJ572Xq"></script>
 
